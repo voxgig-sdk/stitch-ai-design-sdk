@@ -1,0 +1,18 @@
+# BasicDesignGenerationFlow
+
+main: kit: flow: BasicDesignGenerationFlow:
+{
+  entity: "design_generation",
+  kind: "basic",
+  name: "BasicDesignGenerationFlow",
+  step: [
+    {
+      input: {
+        ref: "design_generation_ref01"
+      }
+
+      op: "create"
+    }
+  ],
+  "key$": "BasicDesignGenerationFlow"
+}

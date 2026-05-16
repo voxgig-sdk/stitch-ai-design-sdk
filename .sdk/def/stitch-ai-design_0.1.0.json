@@ -1,0 +1,247 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Stitch AI Design",
+    "description": "Stitch is an API that generates user interfaces for mobile and web applications, streamlining the design process. It leverages artificial intelligence to assist designers in quickly ideating and creating layouts, making design both fast and efficient.",
+    "version": "1.0.0",
+    "contact": {
+      "name": "Stitch AI Design",
+      "url": "https://stitch.withgoogle.com/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://stitch.withgoogle.com/api",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/generate": {
+      "post": {
+        "summary": "Generate UI Design",
+        "description": "Generates user interface designs for mobile and web applications using artificial intelligence based on the provided design requirements and parameters.",
+        "operationId": "generateUIDesign",
+        "tags": [
+          "Design Generation"
+        ],
+        "requestBody": {
+          "description": "Design generation parameters and requirements",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "prompt"
+                ],
+                "properties": {
+                  "prompt": {
+                    "type": "string",
+                    "description": "Description of the desired UI design",
+                    "example": "Create a modern login screen for a mobile banking app"
+                  },
+                  "platform": {
+                    "type": "string",
+                    "enum": [
+                      "web",
+                      "mobile",
+                      "ios",
+                      "android"
+                    ],
+                    "description": "Target platform for the UI design",
+                    "example": "mobile"
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Design style preferences",
+                    "example": "minimalist"
+                  },
+                  "colorScheme": {
+                    "type": "string",
+                    "description": "Preferred color scheme for the design",
+                    "example": "blue and white"
+                  },
+                  "components": {
+                    "type": "array",
+                    "description": "Specific UI components to include",
+                    "items": {
+                      "type": "string"
+                    },
+                    "example": [
+                      "button",
+                      "input field",
+                      "logo"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successfully generated UI design",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "designId": {
+                      "type": "string",
+                      "description": "Unique identifier for the generated design",
+                      "example": "design_abc123xyz"
+                    },
+                    "design": {
+                      "type": "object",
+                      "properties": {
+                        "layout": {
+                          "type": "object",
+                          "description": "Layout structure and component positioning"
+                        },
+                        "components": {
+                          "type": "array",
+                          "description": "Array of UI components in the design",
+                          "items": {
+                            "type": "object"
+                          }
+                        },
+                        "styles": {
+                          "type": "object",
+                          "description": "CSS or style definitions for the design"
+                        }
+                      }
+                    },
+                    "preview": {
+                      "type": "string",
+                      "format": "uri",
+                      "description": "URL to preview image of the generated design",
+                      "example": "https://stitch.withgoogle.com/previews/design_abc123xyz.png"
+                    },
+                    "exportFormats": {
+                      "type": "array",
+                      "description": "Available export formats for the design",
+                      "items": {
+                        "type": "string"
+                      },
+                      "example": [
+                        "figma",
+                        "sketch",
+                        "html",
+                        "react"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid prompt or missing required parameters"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized - Invalid or missing API key",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Invalid API key"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "Too many requests - Rate limit exceeded",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Rate limit exceeded"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal server error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "error": {
+                      "type": "string",
+                      "example": "Internal server error occurred"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "ApiKeyAuth": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "ApiKeyAuth": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-Key",
+        "description": "API key for authentication"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Design Generation",
+      "description": "AI-powered UI design generation endpoints"
+    }
+  ]
+}

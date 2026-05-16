@@ -1,0 +1,82 @@
+# Entity: design_generation
+
+main: kit: entity: design_generation: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "color_scheme"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "component"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "design"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "design_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "export_format"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "platform"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "preview"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "prompt"
+      req: true
+      type: "`$STRING`"
+    }
+    {
+      name: "style"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "success"
+      req: false
+      type: "`$BOOLEAN`"
+    }
+  ]
+
+  name: "design_generation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          method: "POST"
+          orig: "/generate"
+          parts: [
+            "generate"
+          ]
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

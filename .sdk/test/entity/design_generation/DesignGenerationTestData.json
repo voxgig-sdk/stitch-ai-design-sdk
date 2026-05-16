@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "design_generation": {
+      "DESIGN_GENERATION00": {
+        "color_scheme": "s64",
+        "component": [],
+        "design": {},
+        "design_id": "DESIGN01",
+        "export_format": [],
+        "platform": "s69",
+        "preview": "s6a",
+        "prompt": "s6b",
+        "style": "s6c",
+        "success": false
+      },
+      "DESIGN_GENERATION01": {
+        "color_scheme": "sc8",
+        "component": [],
+        "design": {},
+        "design_id": "DESIGN01",
+        "export_format": [],
+        "platform": "scd",
+        "preview": "sce",
+        "prompt": "scf",
+        "style": "sd0",
+        "success": false
+      },
+      "DESIGN_GENERATION02": {
+        "color_scheme": "s12c",
+        "component": [],
+        "design": {},
+        "design_id": "DESIGN01",
+        "export_format": [],
+        "platform": "s131",
+        "preview": "s132",
+        "prompt": "s133",
+        "style": "s134",
+        "success": false
+      }
+    }
+  },
+  "new": {
+    "design_generation": {
+      "design_generation_ref01": {
+        "color_scheme": "s190",
+        "component": [],
+        "design": {},
+        "design_id": "DESIGN01",
+        "export_format": [],
+        "platform": "s195",
+        "preview": "s196",
+        "prompt": "s197",
+        "style": "s198",
+        "success": false
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        name: "Stitch AI Design"
+        url: "https://stitch.withgoogle.com/"
+      }
+      description: "Stitch is an API that generates user interfaces for mobile and web applications, streamlining the design process. It leverages artificial intelligence to assist designers in quickly ideating and creating layouts, making design both fast and efficient."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://stitch.withgoogle.com/api"
+        }
+      ]
+      title: "Stitch AI Design"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

@@ -11,7 +11,8 @@
         "preview": "s6a",
         "prompt": "s6b",
         "style": "s6c",
-        "success": false
+        "success": false,
+        "id": "DESIGN_GENERATION00"
       },
       "DESIGN_GENERATION01": {
         "color_scheme": "sc8",
@@ -23,7 +24,8 @@
         "preview": "sce",
         "prompt": "scf",
         "style": "sd0",
-        "success": false
+        "success": false,
+        "id": "DESIGN_GENERATION01"
       },
       "DESIGN_GENERATION02": {
         "color_scheme": "s12c",
@@ -35,7 +37,8 @@
         "preview": "s132",
         "prompt": "s133",
         "style": "s134",
-        "success": false
+        "success": false,
+        "id": "DESIGN_GENERATION02"
       }
     }
   },

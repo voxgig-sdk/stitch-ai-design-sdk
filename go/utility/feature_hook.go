@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 )
 
 func featureHookUtil(ctx *core.Context, name string) {

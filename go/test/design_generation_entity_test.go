@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/stitch-ai-design-sdk"
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+	sdk "github.com/voxgig-sdk/stitch-ai-design-sdk/go"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/stitch-ai-design-sdk/go/utility/struct"
 )
 
 func TestDesignGenerationEntity(t *testing.T) {

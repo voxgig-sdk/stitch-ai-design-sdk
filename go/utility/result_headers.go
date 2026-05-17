@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+import "github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 
 func resultHeadersUtil(ctx *core.Context) *core.Result {
 	response := ctx.Response

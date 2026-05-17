@@ -1,9 +1,9 @@
 package utility
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/stitch-ai-design-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 )
 
 func featureInitUtil(ctx *core.Context, f core.Feature) {

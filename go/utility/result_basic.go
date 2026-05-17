@@ -3,7 +3,7 @@ package utility
 import (
 	"fmt"
 
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 )
 
 func resultBasicUtil(ctx *core.Context) *core.Result {

@@ -1,10 +1,10 @@
 package voxgigstitchaidesignsdk
 
 import (
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/entity"
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/feature"
-	_ "github.com/voxgig-sdk/stitch-ai-design-sdk/utility"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/entity"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/feature"
+	_ "github.com/voxgig-sdk/stitch-ai-design-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/stitch-ai-design-sdk"
+	sdk "github.com/voxgig-sdk/stitch-ai-design-sdk/go"
 )
 
 func TestExists(t *testing.T) {

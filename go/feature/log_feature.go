@@ -4,7 +4,7 @@ import (
 	"log/slog"
 	"os"
 
-	"github.com/voxgig-sdk/stitch-ai-design-sdk/core"
+	"github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 )
 
 type LogFeature struct {

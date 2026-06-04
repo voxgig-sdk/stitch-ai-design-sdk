@@ -31,9 +31,7 @@ loading a specific record.
 ```ruby
 require_relative "StitchAiDesign_sdk"
 
-client = StitchAiDesignSDK.new({
-  "apikey" => ENV["STITCH-AI-DESIGN_APIKEY"],
-})
+client = StitchAiDesignSDK.new({})
 ```
 
 ### 4. Create, update, and remove
@@ -121,7 +119,6 @@ Create a `.env.local` file at the project root:
 
 ```
 STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -144,7 +141,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `String` | API key for authentication. |
 | `base` | `String` | Base URL of the API server. |
 | `prefix` | `String` | URL path prefix prepended to all requests. |
 | `suffix` | `String` | URL path suffix appended to all requests. |

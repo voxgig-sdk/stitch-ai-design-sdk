@@ -17,8 +17,18 @@ main: {
       ]
       title: "Stitch AI Design"
       version: "1.0.0"
+      tagline: "Generate mobile and web user interface designs from prompts using Google's Stitch AI"
+      homepage: "https://stitch.withgoogle.com/"
+      docs_url: "https://stitch.withgoogle.com/"
+      about_md: `[Stitch](https://stitch.withgoogle.com/) is a Google experiment that uses AI to generate user interface designs for mobile and web applications, helping designers move from idea to prototype without hand-crafting each layout.
+
+The SDK targets the \`https://stitch.withgoogle.com/api\` endpoint, which exposes Stitch's design-generation capability so callers can request UI mockups programmatically rather than only through the web tool.
+
+The community catalogue page on [freepublicapis.com](https://freepublicapis.com/stitch-ai-design) lists the API as requiring an API key and notes that CORS is disabled, so browser-side calls are not supported and requests should originate from a server or trusted client.`
+      entity_desc: {
+        design_generation: "AI-driven UI design generation requests sent to the Stitch API host."
+      }
+      auth: false
     }
   }
-}
-
 }

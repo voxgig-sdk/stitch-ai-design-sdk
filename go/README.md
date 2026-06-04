@@ -28,16 +28,13 @@ package main
 
 import (
     "fmt"
-    "os"
 
     sdk "github.com/voxgig-sdk/stitch-ai-design-sdk/go"
     "github.com/voxgig-sdk/stitch-ai-design-sdk/go/core"
 )
 
 func main() {
-    client := sdk.NewStitchAiDesignSDK(map[string]any{
-        "apikey": os.Getenv("STITCH-AI-DESIGN_APIKEY"),
-    })
+    client := sdk.NewStitchAiDesignSDK(map[string]any{})
 ```
 
 ### 4. Create, update, and remove
@@ -135,7 +132,6 @@ Create a `.env.local` file at the project root:
 
 ```
 STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -157,7 +153,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `"apikey"` | `string` | API key for authentication. |
 | `"base"` | `string` | Base URL of the API server. |
 | `"prefix"` | `string` | URL path prefix prepended to all requests. |
 | `"suffix"` | `string` | URL path suffix appended to all requests. |

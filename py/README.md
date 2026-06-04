@@ -23,12 +23,9 @@ loading a specific record.
 ### 1. Create a client
 
 ```python
-import os
 from stitchaidesign_sdk import StitchAiDesignSDK
 
-client = StitchAiDesignSDK({
-    "apikey": os.environ.get("STITCH-AI-DESIGN_APIKEY"),
-})
+client = StitchAiDesignSDK({})
 ```
 
 ### 4. Create, update, and remove
@@ -116,7 +113,6 @@ Create a `.env.local` file at the project root:
 
 ```
 STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -140,7 +136,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `str` | API key for authentication. |
 | `base` | `str` | Base URL of the API server. |
 | `prefix` | `str` | URL path prefix prepended to all requests. |
 | `suffix` | `str` | URL path suffix appended to all requests. |

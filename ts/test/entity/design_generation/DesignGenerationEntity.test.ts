@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID': idmap,
     'STITCH_AI_DESIGN_TEST_LIVE': 'FALSE',
     'STITCH_AI_DESIGN_TEST_EXPLAIN': 'FALSE',
+    'STITCH_AI_DESIGN_APIKEY': 'NONE',
   })
 
   idmap = env['STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new StitchAiDesignSDK(merge([
       {
+        apikey: env.STITCH_AI_DESIGN_APIKEY,
       },
       extra
     ]))

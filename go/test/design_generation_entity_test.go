@@ -110,6 +110,7 @@ func design_generationBasicSetup(extra map[string]any) *entityTestSetup {
 		"STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID": idmap,
 		"STITCHAIDESIGN_TEST_LIVE":      "FALSE",
 		"STITCHAIDESIGN_TEST_EXPLAIN":   "FALSE",
+		"STITCHAIDESIGN_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID"])
@@ -120,6 +121,7 @@ func design_generationBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["STITCHAIDESIGN_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["STITCHAIDESIGN_APIKEY"],
 			},
 			extra,
 		})

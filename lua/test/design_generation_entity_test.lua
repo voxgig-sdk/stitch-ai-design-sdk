@@ -86,6 +86,7 @@ function design_generation_basic_setup(extra)
     ["STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID"] = idmap,
     ["STITCHAIDESIGN_TEST_LIVE"] = "FALSE",
     ["STITCHAIDESIGN_TEST_EXPLAIN"] = "FALSE",
+    ["STITCHAIDESIGN_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -97,6 +98,7 @@ function design_generation_basic_setup(extra)
   if env["STITCHAIDESIGN_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["STITCHAIDESIGN_APIKEY"],
       },
       extra or {},
     })

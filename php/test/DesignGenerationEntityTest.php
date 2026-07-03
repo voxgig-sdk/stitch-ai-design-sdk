@@ -80,6 +80,7 @@ function design_generation_basic_setup($extra)
         "STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID" => $idmap,
         "STITCHAIDESIGN_TEST_LIVE" => "FALSE",
         "STITCHAIDESIGN_TEST_EXPLAIN" => "FALSE",
+        "STITCHAIDESIGN_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -91,6 +92,7 @@ function design_generation_basic_setup($extra)
     if ($env["STITCHAIDESIGN_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["STITCHAIDESIGN_APIKEY"],
             ],
             $extra ?? [],
         ]);

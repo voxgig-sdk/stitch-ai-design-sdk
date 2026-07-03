@@ -1,16 +1,8 @@
 # StitchAiDesign SDK
 
-Generate mobile and web user interface designs from prompts using Google's Stitch AI
+Stitch AI Design client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Stitch AI Design
-
-[Stitch](https://stitch.withgoogle.com/) is a Google experiment that uses AI to generate user interface designs for mobile and web applications, helping designers move from idea to prototype without hand-crafting each layout.
-
-The SDK targets the `https://stitch.withgoogle.com/api` endpoint, which exposes Stitch's design-generation capability so callers can request UI mockups programmatically rather than only through the web tool.
-
-The community catalogue page on [freepublicapis.com](https://freepublicapis.com/stitch-ai-design) lists the API as requiring an API key and notes that CORS is disabled, so browser-side calls are not supported and requests should originate from a server or trusted client.
 
 ## Try it
 
@@ -44,27 +36,28 @@ gem install stitch-ai-design-sdk
 luarocks install stitch-ai-design-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { StitchAiDesignSDK } from 'stitch-ai-design'
 
-const client = new StitchAiDesignSDK({})
+const client = new StitchAiDesignSDK({
+  apikey: process.env.STITCH-AI-DESIGN_APIKEY,
+})
 
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -94,7 +87,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **DesignGeneration** | AI-driven UI design generation requests sent to the Stitch API host. | `/generate` |
+| **DesignGeneration** |  | `/generate` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -104,9 +97,12 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from stitchaidesign_sdk import StitchAiDesignSDK
 
-client = StitchAiDesignSDK({})
+client = StitchAiDesignSDK({
+    "apikey": os.environ.get("STITCH-AI-DESIGN_APIKEY"),
+})
 
 ```
 
@@ -116,7 +112,9 @@ client = StitchAiDesignSDK({})
 <?php
 require_once 'stitchaidesign_sdk.php';
 
-$client = new StitchAiDesignSDK([]);
+$client = new StitchAiDesignSDK([
+    "apikey" => getenv("STITCH-AI-DESIGN_APIKEY"),
+]);
 
 ```
 
@@ -125,7 +123,9 @@ $client = new StitchAiDesignSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/stitch-ai-design-sdk/go"
 
-client := sdk.NewStitchAiDesignSDK(map[string]any{})
+client := sdk.NewStitchAiDesignSDK(map[string]any{
+    "apikey": os.Getenv("STITCH-AI-DESIGN_APIKEY"),
+})
 
 ```
 
@@ -134,7 +134,9 @@ client := sdk.NewStitchAiDesignSDK(map[string]any{})
 ```ruby
 require_relative "StitchAiDesign_sdk"
 
-client = StitchAiDesignSDK.new({})
+client = StitchAiDesignSDK.new({
+  "apikey" => ENV["STITCH-AI-DESIGN_APIKEY"],
+})
 
 ```
 
@@ -143,7 +145,9 @@ client = StitchAiDesignSDK.new({})
 ```lua
 local sdk = require("stitch-ai-design_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("STITCH-AI-DESIGN_APIKEY"),
+})
 
 ```
 
@@ -163,25 +167,21 @@ const result = await client.DesignGeneration().load({ id: 'test01' })
 ### Python
 
 ```python
-client = StitchAiDesignSDK.test(None, None)
-result, err = client.DesignGeneration(None).load(
-    {"id": "test01"}, None
-)
+client = StitchAiDesignSDK.test()
+result, err = client.DesignGeneration().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = StitchAiDesignSDK::test(null, null);
-[$result, $err] = $client->DesignGeneration(null)->load(
-    ["id" => "test01"], null
-);
+$client = StitchAiDesignSDK::test();
+[$result, $err] = $client->DesignGeneration()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.DesignGeneration(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -190,19 +190,15 @@ result, err := client.DesignGeneration(nil).Load(
 ### Ruby
 
 ```ruby
-client = StitchAiDesignSDK.test(nil, nil)
-result, err = client.DesignGeneration(nil).load(
-  { "id" => "test01" }, nil
-)
+client = StitchAiDesignSDK.test
+result, err = client.DesignGeneration().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:DesignGeneration(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:DesignGeneration():load({ id = "test01" })
 ```
 
 ## How it works
@@ -306,10 +302,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Stitch AI Design
-
-- Upstream: [https://stitch.withgoogle.com/](https://stitch.withgoogle.com/)
 
 ---
 

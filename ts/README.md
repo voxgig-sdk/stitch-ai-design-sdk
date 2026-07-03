@@ -10,7 +10,7 @@ The TypeScript SDK for the StitchAiDesign API — a type-safe, entity-oriented c
 
 ## Install
 ```bash
-npm install stitch-ai-design
+npm install @voxgig-sdk/stitch-ai-design
 ```
 ## Tutorial: your first API call
 

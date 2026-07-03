@@ -10,7 +10,7 @@ The Python SDK for the StitchAiDesign API — an entity-oriented client followin
 
 ## Install
 ```bash
-pip install stitch-ai-design-sdk
+pip install voxgig-sdk-stitch-ai-design
 ```
 
 Or install from source:

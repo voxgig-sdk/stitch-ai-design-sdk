@@ -10,7 +10,7 @@ The Lua SDK for the StitchAiDesign API — an entity-oriented client using Lua c
 
 ## Install
 ```bash
-luarocks install stitch-ai-design-sdk
+luarocks install voxgig-sdk-stitch-ai-design
 ```
 
 If the module is not yet published, add the source directory to

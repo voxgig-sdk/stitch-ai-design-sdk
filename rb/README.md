@@ -10,13 +10,13 @@ The Ruby SDK for the StitchAiDesign API — an entity-oriented client using idio
 
 ## Install
 ```bash
-gem install stitch-ai-design-sdk
+gem install voxgig-sdk-stitch-ai-design
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "stitch-ai-design-sdk"
+gem "voxgig-sdk-stitch-ai-design"
 ```
 
 Then run:

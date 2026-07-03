@@ -8,12 +8,14 @@ source = {
   dir = "stitch-ai-design-sdk/lua"
 }
 description = {
-  summary = "StitchAiDesign SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Stitch AI Design public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/stitch-ai-design-sdk",
+  issues_url = "https://github.com/voxgig-sdk/stitch-ai-design-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "stitch-ai-design" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

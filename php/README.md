@@ -10,7 +10,7 @@ The PHP SDK for the StitchAiDesign API — an entity-oriented client using PHP c
 
 ## Install
 ```bash
-composer require voxgig/stitch-ai-design-sdk
+composer require voxgig-sdk/stitch-ai-design
 ```
 
 

@@ -84,7 +84,7 @@ same parameters as `direct()`.
 ## DesignGenerationEntity
 
 ```lua
-local design_generation = client:DesignGeneration(nil)
+local design_generation = client:design_generation(nil)
 ```
 
 ### Fields
@@ -109,7 +109,7 @@ local design_generation = client:DesignGeneration(nil)
 Create a new entity with the given data.
 
 ```lua
-local result, err = client:DesignGeneration():create({
+local result, err = client:design_generation():create({
   prompt = --[[ `$STRING` ]],
 })
 ```

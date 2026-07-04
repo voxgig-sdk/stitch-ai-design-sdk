@@ -44,9 +44,7 @@ class TestDesignGenerationEntity:
         design_generation_ref01_data = helpers.to_map(vs.getprop(
             vs.getpath(setup["data"], "new.design_generation"), "design_generation_ref01"))
 
-        design_generation_ref01_data_result, err = design_generation_ref01_ent.create(design_generation_ref01_data, None)
-        assert err is None
-        design_generation_ref01_data = helpers.to_map(design_generation_ref01_data_result)
+        design_generation_ref01_data = helpers.to_map(design_generation_ref01_ent.create(design_generation_ref01_data, None))
         assert design_generation_ref01_data is not None
 
 

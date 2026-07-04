@@ -43,8 +43,7 @@ class DesignGenerationEntityTest extends TestCase
         $design_generation_ref01_data = Helpers::to_map(Vs::getprop(
             Vs::getpath($setup["data"], "new.design_generation"), "design_generation_ref01"));
 
-        [$design_generation_ref01_data_result, $err] = $design_generation_ref01_ent->create($design_generation_ref01_data, null);
-        $this->assertNull($err);
+        $design_generation_ref01_data_result = $design_generation_ref01_ent->create($design_generation_ref01_data, null);
         $design_generation_ref01_data = Helpers::to_map($design_generation_ref01_data_result);
         $this->assertNotNull($design_generation_ref01_data);
 

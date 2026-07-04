@@ -83,6 +83,10 @@ end
 
 
 
+---@param reqdata DesignGenerationCreateData
+---@param ctrl? table
+---@return DesignGeneration
+---@return string? err
 function DesignGenerationEntity:create(reqdata, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -245,6 +245,9 @@ func (sdk *StitchAiDesignSDK) Direct(fetchargs map[string]any) (map[string]any, 
 }
 
 
+// DesignGeneration returns a DesignGeneration entity bound to this client.
+// Idiomatic usage: client.DesignGeneration(nil).List(nil, nil) or
+// client.DesignGeneration(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *StitchAiDesignSDK) DesignGeneration(data map[string]any) StitchAiDesignEntity {
 	return NewDesignGenerationEntityFunc(sdk, data)
 }

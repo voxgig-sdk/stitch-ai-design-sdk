@@ -9,9 +9,12 @@ The TypeScript SDK for the StitchAiDesign API — a type-safe, entity-oriented c
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/stitch-ai-design
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/stitch-ai-design-sdk/releases](https://github.com/voxgig-sdk/stitch-ai-design-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,10 +23,10 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { StitchAiDesignSDK } from 'stitch-ai-design'
+import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design'
 
 const client = new StitchAiDesignSDK({
-  apikey: process.env.STITCH-AI-DESIGN_APIKEY,
+  apikey: process.env.STITCH_AI_DESIGN_APIKEY,
 })
 ```
 
@@ -31,7 +34,7 @@ const client = new StitchAiDesignSDK({
 
 ```ts
 // Create
-const created = await client.DesignGeneration().create({
+const created = await client.designgeneration.create({
   name: 'Example',
 })
 
@@ -79,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = StitchAiDesignSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.designgeneration.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -96,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.designgeneration
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -133,8 +136,8 @@ const client = new StitchAiDesignSDK({
 Create a `.env.local` file at the project root:
 
 ```
-STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
+STITCH_AI_DESIGN_TEST_LIVE=TRUE
+STITCH_AI_DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -275,7 +278,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.DesignGeneration()`
+Create an instance: `const design_generation = client.design_generation`
 
 #### Operations
 
@@ -301,7 +304,7 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 #### Example: Create
 
 ```ts
-const design_generation = await client.DesignGeneration().create({
+const design_generation = await client.design_generation.create({
   prompt: /* `$STRING` */,
 })
 ```
@@ -364,7 +367,7 @@ stitch-ai-design/
 Import the SDK from the package root:
 
 ```ts
-import { StitchAiDesignSDK } from 'stitch-ai-design'
+import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design'
 ```
 
 ### Entity state
@@ -374,11 +377,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const designgeneration = client.designgeneration
+await designgeneration.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// designgeneration.data() now returns the loaded designgeneration data
+// designgeneration.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

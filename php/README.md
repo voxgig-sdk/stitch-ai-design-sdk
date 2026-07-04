@@ -9,9 +9,10 @@ The PHP SDK for the StitchAiDesign API — an entity-oriented client using PHP c
 
 
 ## Install
-```bash
-composer require voxgig-sdk/stitch-ai-design
-```
+This package is not yet published to Packagist. Install it from the
+GitHub release tag (`php/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/stitch-ai-design-sdk/releases](https://github.com/voxgig-sdk/stitch-ai-design-sdk/releases)
 
 
 ## Tutorial: your first API call
@@ -26,7 +27,7 @@ loading a specific record.
 require_once 'stitchaidesign_sdk.php';
 
 $client = new StitchAiDesignSDK([
-    "apikey" => getenv("STITCH-AI-DESIGN_APIKEY"),
+    "apikey" => getenv("STITCH_AI_DESIGN_APIKEY"),
 ]);
 ```
 
@@ -34,7 +35,7 @@ $client = new StitchAiDesignSDK([
 
 ```php
 // Create
-[$created, $_] = $client->DesignGeneration()->create(["name" => "Example"]);
+$created = $client->designgeneration()->create(["name" => "Example"]);
 
 ```
 
@@ -46,28 +47,31 @@ $client = new StitchAiDesignSDK([
 For endpoints not covered by entity methods:
 
 ```php
-[$result, $err] = $client->direct([
+// direct() is the raw-HTTP escape hatch: it returns a result array
+// (it does not throw). Branch on $result["ok"].
+$result = $client->direct([
     "path" => "/api/resource/{id}",
     "method" => "GET",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 if ($result["ok"]) {
     echo $result["status"];  // 200
     print_r($result["data"]);  // response body
+} else {
+    echo "Error: " . $result["err"]->getMessage();
 }
 ```
 
 ### Prepare a request without sending it
 
 ```php
-[$fetchdef, $err] = $client->prepare([
+// prepare() throws on error and returns the fetch definition.
+$fetchdef = $client->prepare([
     "path" => "/api/resource/{id}",
     "method" => "DELETE",
     "params" => ["id" => "example"],
 ]);
-if ($err) { throw new \Exception($err); }
 
 echo $fetchdef["url"];
 echo $fetchdef["method"];
@@ -81,7 +85,7 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = StitchAiDesignSDK::test();
 
-[$result, $err] = $client->StitchAiDesign()->load(["id" => "test01"]);
+$result = $client->designgeneration()->load(["id" => "test01"]);
 // $result contains mock response data
 ```
 
@@ -115,8 +119,8 @@ $client = new StitchAiDesignSDK([
 Create a `.env.local` file at the project root:
 
 ```
-STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
+STITCH_AI_DESIGN_TEST_LIVE=TRUE
+STITCH_AI_DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -185,8 +189,12 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `[$result, $err]`. The first value is an
-`array` with these keys:
+Entity operations return the bare result data (an `array` for single-entity
+ops, a `list` for `list`) and throw on error. Wrap calls in
+`try`/`catch` to handle failures.
+
+The `direct()` escape hatch never throws — it returns a result `array`
+you branch on via `$result["ok"]`:
 
 | Key | Type | Description |
 | --- | --- | --- |
@@ -225,7 +233,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.DesignGeneration()`
+Create an instance: `const design_generation = client.design_generation`
 
 #### Operations
 
@@ -251,7 +259,7 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 #### Example: Create
 
 ```ts
-const design_generation = await client.DesignGeneration().create({
+const design_generation = await client.design_generation.create({
   prompt: /* `$STRING` */,
 })
 ```
@@ -328,11 +336,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$moon = $client->Moon();
-[$result, $err] = $moon->load(["planet_id" => "earth", "id" => "luna"]);
+$designgeneration = $client->designgeneration();
+$designgeneration->load(["id" => "example_id"]);
 
-// $moon->dataGet() now returns the loaded moon data
-// $moon->matchGet() returns the last match criteria
+// $designgeneration->dataGet() now returns the loaded designgeneration data
+// $designgeneration->matchGet() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

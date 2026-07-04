@@ -55,6 +55,9 @@ class DesignGenerationEntity
         return new DesignGenerationEntity($this->_client, $opts);
     }
 
+    /**
+     * @param DesignGeneration|array $args DesignGeneration data (assoc-array) to store.
+     */
     public function data_set($args): void
     {
         if ($args) {
@@ -63,12 +66,18 @@ class DesignGenerationEntity
         }
     }
 
+    /**
+     * @return DesignGeneration|array The current DesignGeneration data as an assoc-array.
+     */
     public function data_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetData");
         return Struct::clone($this->_data);
     }
 
+    /**
+     * @param array $args Match filter (any subset of DesignGeneration fields).
+     */
     public function match_set($args): void
     {
         if ($args) {
@@ -77,6 +86,9 @@ class DesignGenerationEntity
         }
     }
 
+    /**
+     * @return array The current match filter (any subset of DesignGeneration fields).
+     */
     public function match_get()
     {
         ($this->_utility->feature_hook)($this->_entctx, "GetMatch");
@@ -88,7 +100,16 @@ class DesignGenerationEntity
     
 
     
-    public function create($reqdata, $ctrl = null): array
+    /**
+     * Create a new DesignGeneration.
+     *
+     * @param DesignGenerationCreateData|array|null $reqdata Body data as an assoc-array;
+     *   a typed DesignGenerationCreateData names the shape.
+     * @param mixed $ctrl Optional per-call control overrides.
+     * @return DesignGeneration|array The created DesignGeneration as an assoc-array at the
+     *   SDK boundary; throws StitchAiDesignError on failure (item-5 convention).
+     */
+    public function create(?array $reqdata = null, $ctrl = null): mixed
     {
         $utility = $this->_utility;
         $ctx = ($utility->make_context)([
@@ -114,7 +135,7 @@ class DesignGenerationEntity
 
     
 
-    private function _run_op($ctx, callable $post_done): array
+    private function _run_op($ctx, callable $post_done): mixed
     {
         $utility = $this->_utility;
 

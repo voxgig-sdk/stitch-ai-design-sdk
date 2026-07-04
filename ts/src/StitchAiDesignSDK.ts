@@ -2,6 +2,8 @@
 
 import { DesignGenerationEntity } from './entity/DesignGenerationEntity'
 
+export type * from './StitchAiDesignTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -202,6 +204,14 @@ class StitchAiDesignSDK {
 
 
 
+  _design_generation?: DesignGenerationEntity
+
+  // Idiomatic facade: `client.design_generation.list()` / `client.design_generation.load({ id })`.
+  get design_generation(): DesignGenerationEntity {
+    return (this._design_generation ??= new DesignGenerationEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.design_generation` instead. */
   DesignGeneration(data?: any) {
     const self = this
     return new DesignGenerationEntity(self,data)

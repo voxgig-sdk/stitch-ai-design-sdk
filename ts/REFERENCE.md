@@ -110,7 +110,7 @@ Alias for `StitchAiDesignSDK.test()`.
 ## DesignGenerationEntity
 
 ```ts
-const design_generation = client.DesignGeneration()
+const design_generation = client.design_generation
 ```
 
 ### Fields
@@ -135,7 +135,7 @@ const design_generation = client.DesignGeneration()
 Create a new entity with the given data.
 
 ```ts
-const result = await client.DesignGeneration().create({
+const result = await client.design_generation.create({
   prompt: /* `$STRING` */,
 })
 ```

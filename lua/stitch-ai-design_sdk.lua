@@ -244,6 +244,19 @@ end
 
 
 
+-- Idiomatic facade: client:design_generation():list() / client:design_generation():load({ id = ... })
+function StitchAiDesignSDK:design_generation(data)
+  local EntityMod = require("entity.design_generation_entity")
+  if data == nil then
+    if self._design_generation == nil then
+      self._design_generation = EntityMod.new(self, nil)
+    end
+    return self._design_generation
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:design_generation() instead.
 function StitchAiDesignSDK:DesignGeneration(data)
   local EntityMod = require("entity.design_generation_entity")
   return EntityMod.new(self, data)

@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  DesignGeneration,
+  DesignGenerationCreateData,
+} from '../StitchAiDesignTypes'
 
 // TODO: needs Entity superclass
-class DesignGenerationEntity extends StitchAiDesignEntityBase {
+class DesignGenerationEntity extends StitchAiDesignEntityBase<DesignGeneration> {
 
   constructor(client: StitchAiDesignSDK, entopts: any) {
     super(client, entopts)
@@ -34,7 +38,7 @@ class DesignGenerationEntity extends StitchAiDesignEntityBase {
 
 
 
-  async create(this: any, reqdata?: any, ctrl?: Control) {
+  async create(this: any, reqdata?: DesignGenerationCreateData, ctrl?: Control): Promise<DesignGeneration> {
 
     const utility = this._utility
     const {
@@ -133,7 +137,9 @@ class DesignGenerationEntity extends StitchAiDesignEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<DesignGeneration> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

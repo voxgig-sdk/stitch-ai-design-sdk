@@ -9,12 +9,9 @@ The Lua SDK for the StitchAiDesign API — an entity-oriented client using Lua c
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-stitch-ai-design
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/stitch-ai-design-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -32,7 +29,7 @@ loading a specific record.
 local sdk = require("stitch-ai-design_sdk")
 
 local client = sdk.new({
-  apikey = os.getenv("STITCH-AI-DESIGN_APIKEY"),
+  apikey = os.getenv("STITCH_AI_DESIGN_APIKEY"),
 })
 ```
 
@@ -40,7 +37,7 @@ local client = sdk.new({
 
 ```lua
 -- Create
-local created, _ = client:DesignGeneration():create({ name = "Example" })
+local created, _ = client:designgeneration():create({ name = "Example" })
 
 ```
 
@@ -87,7 +84,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:StitchAiDesign():load({ id = "test01" })
+local result, err = client:designgeneration():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +117,8 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-STITCH-AI-DESIGN_TEST_LIVE=TRUE
-STITCH-AI-DESIGN_APIKEY=<your-key>
+STITCH_AI_DESIGN_TEST_LIVE=TRUE
+STITCH_AI_DESIGN_APIKEY=<your-key>
 ```
 
 Then run:
@@ -230,7 +227,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.DesignGeneration()`
+Create an instance: `const design_generation = client.design_generation`
 
 #### Operations
 
@@ -256,7 +253,7 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 #### Example: Create
 
 ```ts
-const design_generation = await client.DesignGeneration().create({
+const design_generation = await client.design_generation.create({
   prompt: /* `$STRING` */,
 })
 ```
@@ -333,11 +330,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local designgeneration = client:designgeneration()
+designgeneration:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- designgeneration:data_get() now returns the loaded designgeneration data
+-- designgeneration:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

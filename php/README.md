@@ -34,8 +34,8 @@ $client = new StitchAiDesignSDK([
 ### 4. Create, update, and remove
 
 ```php
-// Create
-$created = $client->designgeneration()->create(["name" => "Example"]);
+// create() returns the bare created DesignGeneration record.
+$created = $client->DesignGeneration()->create(["name" => "Example"]);
 
 ```
 
@@ -80,13 +80,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = StitchAiDesignSDK::test();
+$client = StitchAiDesignSDK::test([
+    "entity" => ["designgeneration" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->designgeneration()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$designgeneration = $client->DesignGeneration()->load(["id" => "test01"]);
+print_r($designgeneration);
 ```
 
 ### Use a custom fetch function
@@ -233,7 +237,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.design_generation`
+Create an instance: `$design_generation = $client->DesignGeneration();`
 
 #### Operations
 
@@ -258,10 +262,10 @@ Create an instance: `const design_generation = client.design_generation`
 
 #### Example: Create
 
-```ts
-const design_generation = await client.design_generation.create({
-  prompt: /* `$STRING` */,
-})
+```php
+$design_generation = $client->DesignGeneration()->create([
+    "prompt" => null, // `$STRING`
+]);
 ```
 
 
@@ -336,7 +340,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$designgeneration = $client->designgeneration();
+$designgeneration = $client->DesignGeneration();
 $designgeneration->load(["id" => "example_id"]);
 
 // $designgeneration->dataGet() now returns the loaded designgeneration data

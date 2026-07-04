@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:design_generation():list() / client:design_generation():load({ id = ... })
-function StitchAiDesignSDK:design_generation(data)
+-- Idiomatic facade: client:DesignGeneration():list() / client:DesignGeneration():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function StitchAiDesignSDK:DesignGeneration(data)
   local EntityMod = require("entity.design_generation_entity")
   if data == nil then
     if self._design_generation == nil then
@@ -253,12 +254,6 @@ function StitchAiDesignSDK:design_generation(data)
     end
     return self._design_generation
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:design_generation() instead.
-function StitchAiDesignSDK:DesignGeneration(data)
-  local EntityMod = require("entity.design_generation_entity")
   return EntityMod.new(self, data)
 end
 

@@ -208,13 +208,7 @@ class StitchAiDesignSDK
   end
 
 
-  # Idiomatic facade: client.design_generation.list / client.design_generation.load({ "id" => ... })
-  def design_generation
-    require_relative 'entity/design_generation_entity'
-    @design_generation ||= DesignGenerationEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.design_generation instead.
+  # Canonical facade: client.DesignGeneration.list / client.DesignGeneration.load({ "id" => ... })
   def DesignGeneration(data = nil)
     require_relative 'entity/design_generation_entity'
     DesignGenerationEntity.new(self, data)

@@ -37,8 +37,8 @@ client = StitchAiDesignSDK({
 ### 4. Create, update, and remove
 
 ```python
-# Create
-created = client.designgeneration.create({"name": "Example"})
+# Create — returns the bare created record (a dict)
+created = client.DesignGeneration().create({"name": "Example"})
 
 ```
 
@@ -85,8 +85,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = StitchAiDesignSDK.test()
 
-result = client.designgeneration.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+designgeneration = client.DesignGeneration().load({"id": "test01"})
+# designgeneration contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -230,7 +231,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.design_generation`
+Create an instance: `design_generation = client.DesignGeneration()`
 
 #### Operations
 
@@ -255,9 +256,9 @@ Create an instance: `const design_generation = client.design_generation`
 
 #### Example: Create
 
-```ts
-const design_generation = await client.design_generation.create({
-  prompt: /* `$STRING` */,
+```python
+design_generation = client.DesignGeneration().create({
+    "prompt": ...,  # `$STRING`
 })
 ```
 
@@ -332,7 +333,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-designgeneration = client.designgeneration
+designgeneration = client.DesignGeneration()
 designgeneration.load({"id": "example_id"})
 
 # designgeneration.data_get() now returns the loaded designgeneration data

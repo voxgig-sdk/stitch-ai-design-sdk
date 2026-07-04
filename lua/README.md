@@ -37,7 +37,8 @@ local client = sdk.new({
 
 ```lua
 -- Create
-local created, _ = client:designgeneration():create({ name = "Example" })
+local created, err = client:DesignGeneration():create({ name = "Example" })
+if err then error(err) end
 
 ```
 
@@ -84,8 +85,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:designgeneration():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:DesignGeneration():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -187,17 +188,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local design_generation, err = client:DesignGeneration():load({ id = "example_id" })
+    if err then error(err) end
+    -- design_generation is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -227,7 +233,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `const design_generation = client.design_generation`
+Create an instance: `local design_generation = client:DesignGeneration(nil)`
 
 #### Operations
 
@@ -252,9 +258,9 @@ Create an instance: `const design_generation = client.design_generation`
 
 #### Example: Create
 
-```ts
-const design_generation = await client.design_generation.create({
-  prompt: /* `$STRING` */,
+```lua
+local design_generation, err = client:DesignGeneration():create({
+  prompt = nil, -- `$STRING`
 })
 ```
 
@@ -330,7 +336,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local designgeneration = client:designgeneration()
+local designgeneration = client:DesignGeneration()
 designgeneration:load({ id = "example_id" })
 
 -- designgeneration:data_get() now returns the loaded designgeneration data

@@ -220,25 +220,15 @@ class StitchAiDesignSDK:
         }
 
 
-    @property
-    def design_generation(self):
-        """Idiomatic facade: client.design_generation.list() / client.design_generation.load({"id": ...})."""
-        from entity.design_generation_entity import DesignGenerationEntity
-        cached = getattr(self, "_design_generation", None)
-        if cached is None:
-            cached = DesignGenerationEntity(self, None)
-            self._design_generation = cached
-        return cached
-
-    def DesignGeneration(self, data=None):
-        # Deprecated: use client.design_generation instead.
+    def DesignGeneration(self, data=None) -> "DesignGenerationEntity":
+        """Entity factory: client.DesignGeneration().list({}) / client.DesignGeneration().load({"id": ...})."""
         from entity.design_generation_entity import DesignGenerationEntity
         return DesignGenerationEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "StitchAiDesignSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -258,3 +248,9 @@ class StitchAiDesignSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.design_generation_entity import DesignGenerationEntity

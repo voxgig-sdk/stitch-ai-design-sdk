@@ -86,7 +86,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## DesignGenerationEntity
 
 ```php
-$design_generation = $client->design_generation();
+$design_generation = $client->DesignGeneration();
 ```
 
 ### Fields
@@ -111,7 +111,7 @@ $design_generation = $client->design_generation();
 Create a new entity with the given data. Throws on error.
 
 ```php
-$result = $client->design_generation()->create([
+$result = $client->DesignGeneration()->create([
   "prompt" => /* `$STRING` */,
 ]);
 ```

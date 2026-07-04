@@ -87,7 +87,7 @@ same parameters as `direct()`. Raises on error.
 ## DesignGenerationEntity
 
 ```ruby
-design_generation = client.design_generation
+design_generation = client.DesignGeneration
 ```
 
 ### Fields
@@ -112,7 +112,7 @@ design_generation = client.design_generation
 Create a new entity with the given data. Raises on error.
 
 ```ruby
-result = client.design_generation.create({
+result = client.DesignGeneration.create({
   "prompt" => # `$STRING`,
 })
 ```

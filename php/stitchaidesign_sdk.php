@@ -233,10 +233,10 @@ class StitchAiDesignSDK
 
     private $_design_generation = null;
 
-    // Idiomatic facade: $client->design_generation()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias DesignGeneration() (PHP method
-    // names are case-insensitive).
-    public function design_generation($data = null)
+    // Canonical facade: $client->DesignGeneration()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->design_generation()
+    // resolves here too.
+    public function DesignGeneration($data = null)
     {
         require_once __DIR__ . '/entity/design_generation_entity.php';
         if ($data === null) {

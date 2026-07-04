@@ -141,22 +141,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = StitchAiDesignSDK.test()
-const result = await client.designgeneration.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const designgeneration = await client.DesignGeneration().load({ id: 'test01' })
+// designgeneration is a bare DesignGeneration populated with mock data
+console.log(designgeneration)
 ```
 
 ### Python
 
 ```python
 client = StitchAiDesignSDK.test()
-result = client.designgeneration.load({"id": "test01"})
+designgeneration = client.DesignGeneration().load({"id": "test01"})
+print(designgeneration)
 ```
 
 ### PHP
 
 ```php
-$client = StitchAiDesignSDK::test();
-$result = $client->designgeneration()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = StitchAiDesignSDK::test([
+    "entity" => ["designgeneration" => ["test01" => ["id" => "test01"]]],
+]);
+$designgeneration = $client->DesignGeneration()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -171,15 +176,18 @@ result, err := client.DesignGeneration(nil).Load(
 ### Ruby
 
 ```ruby
-client = StitchAiDesignSDK.test
-result = client.designgeneration.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = StitchAiDesignSDK.test({
+  "entity" => { "designgeneration" => { "test01" => { "id" => "test01" } } },
+})
+designgeneration = client.DesignGeneration.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:designgeneration():load({ id = "test01" })
+local result, err = client:DesignGeneration():load({ id = "test01" })
 ```
 
 ## How it works
@@ -227,6 +235,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

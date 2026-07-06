@@ -32,7 +32,11 @@ class DesignGeneration(DesignGenerationRequired, total=False):
     success: bool
 
 
-class DesignGenerationCreateData(TypedDict, total=False):
+class DesignGenerationCreateDataRequired(TypedDict):
+    prompt: str
+
+
+class DesignGenerationCreateData(DesignGenerationCreateDataRequired, total=False):
     color_scheme: str
     component: list
     design: dict
@@ -40,6 +44,5 @@ class DesignGenerationCreateData(TypedDict, total=False):
     export_format: list
     platform: str
     preview: str
-    prompt: str
     style: str
     success: bool

@@ -221,7 +221,7 @@ class StitchAiDesignSDK:
 
 
     def DesignGeneration(self, data=None) -> "DesignGenerationEntity":
-        """Entity factory: client.DesignGeneration().list({}) / client.DesignGeneration().load({"id": ...})."""
+        """Entity factory: client.DesignGeneration().list() / client.DesignGeneration().load({"id": ...})."""
         from entity.design_generation_entity import DesignGenerationEntity
         return DesignGenerationEntity(self, data)
 

@@ -8,7 +8,7 @@ Complete API reference for the StitchAiDesign PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/stitch-ai-design_sdk.php';
+require_once __DIR__ . '/stitchaidesign_sdk.php';
 
 $client = new StitchAiDesignSDK($options);
 ```
@@ -46,11 +46,11 @@ $client = StitchAiDesignSDK::test();
 
 Create a new `DesignGenerationEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): StitchAiDesignUtility`
 
 Return a copy of the SDK utility object.
 
@@ -93,16 +93,16 @@ $design_generation = $client->DesignGeneration();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `string` | No |  |
+| `component` | `array` | No |  |
+| `design` | `array` | No |  |
+| `design_id` | `string` | No |  |
+| `export_format` | `array` | No |  |
+| `platform` | `string` | No |  |
+| `preview` | `string` | No |  |
+| `prompt` | `string` | Yes |  |
+| `style` | `string` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -112,25 +112,25 @@ Create a new entity with the given data. Throws on error.
 
 ```php
 $result = $client->DesignGeneration()->create([
-  "prompt" => /* `$STRING` */,
+  "prompt" => null, // string
 ]);
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -139,7 +139,7 @@ Set the entity match criteria.
 Create a new `DesignGenerationEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

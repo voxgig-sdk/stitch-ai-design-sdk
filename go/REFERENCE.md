@@ -98,16 +98,16 @@ design_generation := client.DesignGeneration(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `string` | No |  |
+| `component` | `[]any` | No |  |
+| `design` | `map[string]any` | No |  |
+| `design_id` | `string` | No |  |
+| `export_format` | `[]any` | No |  |
+| `platform` | `string` | No |  |
+| `preview` | `string` | No |  |
+| `prompt` | `string` | Yes |  |
+| `style` | `string` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -117,7 +117,7 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DesignGeneration(nil).Create(map[string]any{
-    "prompt": /* `$STRING` */,
+    "prompt": /* string */,
 }, nil)
 ```
 

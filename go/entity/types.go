@@ -22,8 +22,7 @@ type DesignGeneration struct {
 	Success *bool `json:"success,omitempty"`
 }
 
-// DesignGenerationCreateData mirrors the design_generation fields as an all-optional match
-// filter (Go analog of Partial<DesignGeneration>).
+// DesignGenerationCreateData is the typed request payload for DesignGeneration.CreateTyped.
 type DesignGenerationCreateData struct {
 	ColorScheme *string `json:"color_scheme,omitempty"`
 	Component *[]any `json:"component,omitempty"`
@@ -32,7 +31,7 @@ type DesignGenerationCreateData struct {
 	ExportFormat *[]any `json:"export_format,omitempty"`
 	Platform *string `json:"platform,omitempty"`
 	Preview *string `json:"preview,omitempty"`
-	Prompt *string `json:"prompt,omitempty"`
+	Prompt string `json:"prompt"`
 	Style *string `json:"style,omitempty"`
 	Success *bool `json:"success,omitempty"`
 }

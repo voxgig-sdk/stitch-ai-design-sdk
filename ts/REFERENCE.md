@@ -117,16 +117,16 @@ const design_generation = client.DesignGeneration()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `string` | No |  |
+| `component` | `any[]` | No |  |
+| `design` | `Record<string, any>` | No |  |
+| `design_id` | `string` | No |  |
+| `export_format` | `any[]` | No |  |
+| `platform` | `string` | No |  |
+| `preview` | `string` | No |  |
+| `prompt` | `string` | Yes |  |
+| `style` | `string` | No |  |
+| `success` | `boolean` | No |  |
 
 ### Operations
 
@@ -136,7 +136,7 @@ Create a new entity with the given data.
 
 ```ts
 const result = await client.DesignGeneration().create({
-  prompt: /* `$STRING` */,
+  prompt: /* string */,
 })
 ```
 

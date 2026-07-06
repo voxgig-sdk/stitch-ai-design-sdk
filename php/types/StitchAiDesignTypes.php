@@ -27,7 +27,7 @@ class DesignGeneration
     public ?bool $success = null;
 }
 
-/** Match filter for DesignGeneration#create (any subset of DesignGeneration fields). */
+/** Request payload for DesignGeneration#create. */
 class DesignGenerationCreateData
 {
     public ?string $color_scheme = null;
@@ -37,7 +37,7 @@ class DesignGenerationCreateData
     public ?array $export_format = null;
     public ?string $platform = null;
     public ?string $preview = null;
-    public ?string $prompt = null;
+    public string $prompt;
     public ?string $style = null;
     public ?bool $success = null;
 }

@@ -18,5 +18,16 @@ export interface DesignGeneration {
   success?: boolean
 }
 
-export type DesignGenerationCreateData = Partial<DesignGeneration>
+export interface DesignGenerationCreateData {
+  color_scheme?: string
+  component?: any[]
+  design?: Record<string, any>
+  design_id?: string
+  export_format?: any[]
+  platform?: string
+  preview?: string
+  prompt: string
+  style?: string
+  success?: boolean
+}
 

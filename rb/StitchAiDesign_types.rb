@@ -53,7 +53,7 @@ DesignGeneration = Struct.new(
   keyword_init: true
 )
 
-# Match filter for DesignGeneration#create (any subset of DesignGeneration fields).
+# Request payload for DesignGeneration#create.
 #
 # @!attribute [rw] color_scheme
 #   @return [String, nil]
@@ -77,7 +77,7 @@ DesignGeneration = Struct.new(
 #   @return [String, nil]
 #
 # @!attribute [rw] prompt
-#   @return [String, nil]
+#   @return [String]
 #
 # @!attribute [rw] style
 #   @return [String, nil]

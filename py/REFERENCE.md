@@ -8,7 +8,7 @@ Complete API reference for the StitchAiDesign Python SDK.
 ### Constructor
 
 ```python
-from stitch-ai-design_sdk import StitchAiDesignSDK
+from stitchaidesign_sdk import StitchAiDesignSDK
 
 client = StitchAiDesignSDK(options)
 ```
@@ -88,16 +88,16 @@ design_generation = client.DesignGeneration()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `str` | No |  |
+| `component` | `list` | No |  |
+| `design` | `dict` | No |  |
+| `design_id` | `str` | No |  |
+| `export_format` | `list` | No |  |
+| `platform` | `str` | No |  |
+| `preview` | `str` | No |  |
+| `prompt` | `str` | Yes |  |
+| `style` | `str` | No |  |
+| `success` | `bool` | No |  |
 
 ### Operations
 
@@ -107,7 +107,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.DesignGeneration().create({
-    "prompt": ...,  # `$STRING`
+    "prompt": "example",  # str
 })
 ```
 

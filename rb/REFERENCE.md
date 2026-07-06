@@ -8,7 +8,7 @@ Complete API reference for the StitchAiDesign Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'stitch-ai-design_sdk'
+require_relative 'StitchAiDesign_sdk'
 
 client = StitchAiDesignSDK.new(options)
 ```
@@ -94,16 +94,16 @@ design_generation = client.DesignGeneration
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `String` | No |  |
+| `component` | `Array` | No |  |
+| `design` | `Hash` | No |  |
+| `design_id` | `String` | No |  |
+| `export_format` | `Array` | No |  |
+| `platform` | `String` | No |  |
+| `preview` | `String` | No |  |
+| `prompt` | `String` | Yes |  |
+| `style` | `String` | No |  |
+| `success` | `Boolean` | No |  |
 
 ### Operations
 
@@ -113,7 +113,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.DesignGeneration.create({
-  "prompt" => # `$STRING`,
+  "prompt" => "example", # String
 })
 ```
 

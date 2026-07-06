@@ -91,16 +91,16 @@ local design_generation = client:DesignGeneration(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | ``$STRING`` | No |  |
-| `component` | ``$ARRAY`` | No |  |
-| `design` | ``$OBJECT`` | No |  |
-| `design_id` | ``$STRING`` | No |  |
-| `export_format` | ``$ARRAY`` | No |  |
-| `platform` | ``$STRING`` | No |  |
-| `preview` | ``$STRING`` | No |  |
-| `prompt` | ``$STRING`` | Yes |  |
-| `style` | ``$STRING`` | No |  |
-| `success` | ``$BOOLEAN`` | No |  |
+| `color_scheme` | `string` | No |  |
+| `component` | `table` | No |  |
+| `design` | `table` | No |  |
+| `design_id` | `string` | No |  |
+| `export_format` | `table` | No |  |
+| `platform` | `string` | No |  |
+| `preview` | `string` | No |  |
+| `prompt` | `string` | Yes |  |
+| `style` | `string` | No |  |
+| `success` | `boolean` | No |  |
 
 ### Operations
 
@@ -110,7 +110,7 @@ Create a new entity with the given data.
 
 ```lua
 local result, err = client:DesignGeneration():create({
-  prompt = --[[ `$STRING` ]],
+  prompt = --[[ string ]],
 })
 ```
 

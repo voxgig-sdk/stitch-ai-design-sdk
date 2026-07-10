@@ -36,7 +36,7 @@ client = StitchAiDesignSDK.new({
 
 ```ruby
 # create returns the bare created DesignGeneration record.
-created = client.DesignGeneration.create({ "prompt" => "example" })
+created = client.DesignGeneration.create({ "prompt" => "example_prompt" })
 
 ```
 
@@ -283,7 +283,7 @@ Create an instance: `design_generation = client.DesignGeneration`
 
 ```ruby
 design_generation = client.DesignGeneration.create({
-  "prompt" => "example", # String
+  "prompt" => "example_prompt", # String
 })
 ```
 

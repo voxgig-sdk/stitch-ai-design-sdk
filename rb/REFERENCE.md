@@ -113,7 +113,7 @@ Create a new entity with the given data. Raises on error.
 
 ```ruby
 result = client.DesignGeneration.create({
-  "prompt" => "example", # String
+  "prompt" => "example_prompt", # String
 })
 ```
 

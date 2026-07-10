@@ -336,7 +336,7 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 
 ```ts
 const design_generation = await client.DesignGeneration().create({
-  prompt: /* string */,
+  prompt: 'example_prompt',
 })
 ```
 

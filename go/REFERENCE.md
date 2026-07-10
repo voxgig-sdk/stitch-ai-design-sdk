@@ -91,7 +91,8 @@ same parameters as `Direct()`.
 ## DesignGenerationEntity
 
 ```go
-design_generation := client.DesignGeneration(nil)
+designGeneration := client.DesignGeneration(nil)
+fmt.Println(designGeneration.GetName()) // "design_generation"
 ```
 
 ### Fields
@@ -117,8 +118,12 @@ Create a new entity with the given data.
 
 ```go
 result, err := client.DesignGeneration(nil).Create(map[string]any{
-    "prompt": /* string */,
+    "prompt": "example_prompt",
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods

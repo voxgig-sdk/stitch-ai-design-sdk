@@ -37,7 +37,7 @@ $client = new StitchAiDesignSDK([
 
 ```php
 // create() returns the bare created DesignGeneration record.
-$created = $client->DesignGeneration()->create(["prompt" => "example"]);
+$created = $client->DesignGeneration()->create(["prompt" => "example_prompt"]);
 
 ```
 

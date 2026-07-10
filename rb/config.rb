@@ -16,7 +16,7 @@ module StitchAiDesignConfig
       "options" => {
         "base" => "https://stitch.withgoogle.com/api",
         "auth" => {
-          "prefix" => "Bearer",
+          "prefix" => "",
         },
         "headers" => {
           "content-type" => "application/json",

@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -239,14 +236,24 @@
           "url": "https://stitch.withgoogle.com/"
         },
         "description": "Stitch is an API that generates user interfaces for mobile and web applications, streamlining the design process. It leverages artificial intelligence to assist designers in quickly ideating and creating layouts, making design both fast and efficient.",
+        "meta_source": "https://www.freepublicapis.com",
+        "security": {
+          "in": "header",
+          "name": "X-API-Key",
+          "prefix": "",
+          "scheme": "ApiKeyAuth",
+          "type": "apiKey"
+        },
         "servers": [
           {
             "description": "Production server",
             "url": "https://stitch.withgoogle.com/api"
           }
         ],
+        "summary": "Stitch is an API that generates user interfaces for mobile and web applications, streamlining the design process.",
         "title": "Stitch AI Design",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://stitch.withgoogle.com"
       },
       "option": {},
       "target": {
@@ -299,6 +306,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -349,6 +359,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

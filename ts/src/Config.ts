@@ -39,7 +39,7 @@ class Config {
     base: 'https://stitch.withgoogle.com/api',
 
     auth: {
-      prefix: 'Bearer',
+      prefix: '',
     },
 
     headers: {

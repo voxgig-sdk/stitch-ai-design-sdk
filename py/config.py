@@ -16,7 +16,7 @@ def make_config():
         "options": {
             "base": "https://stitch.withgoogle.com/api",
             "auth": {
-                "prefix": "Bearer",
+                "prefix": "",
             },
             "headers": {
         "content-type": "application/json",

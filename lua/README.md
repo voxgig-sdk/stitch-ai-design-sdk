@@ -39,7 +39,7 @@ local client = sdk.new({
 
 ```lua
 -- Create
-local created, err = client:DesignGeneration():create({ prompt = "example" })
+local created, err = client:DesignGeneration():create({ prompt = "example_prompt" })
 if err then error(err) end
 
 ```
@@ -279,7 +279,7 @@ Create an instance: `local design_generation = client:DesignGeneration(nil)`
 
 ```lua
 local design_generation, err = client:DesignGeneration():create({
-  prompt = nil, -- string
+  prompt = "example_prompt", -- string
 })
 ```
 

@@ -107,7 +107,7 @@ Create a new entity with the given data. Returns the created entity data and rai
 
 ```python
 result = client.DesignGeneration().create({
-    "prompt": "example",  # str
+    "prompt": "example_prompt",  # str
 })
 ```
 

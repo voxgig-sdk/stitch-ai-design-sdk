@@ -53,8 +53,8 @@ func main() {
         "apikey": os.Getenv("STITCH_AI_DESIGN_APIKEY"),
     })
 
-    // Create a designgeneration.
-    created, err := client.DesignGeneration(nil).Create(map[string]any{"prompt": "example"}, nil)
+    // Create a designGeneration.
+    created, err := client.DesignGeneration(nil).Create(map[string]any{"prompt": "example_prompt"}, nil)
     if err != nil {
         panic(err)
     }
@@ -138,13 +138,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-designgeneration, err := client.DesignGeneration(nil).Create(
+designGeneration, err := client.DesignGeneration(nil).Create(
     map[string]any{"prompt": "example"}, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(designgeneration) // the returned mock data
+fmt.Println(designGeneration) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -250,9 +250,9 @@ Check `err` first, then use the value directly (or the typed
 `...Typed` variants, which return the entity's model struct and a typed
 slice):
 
-    designgeneration, err := client.DesignGeneration(nil).Create(map[string]any{/* fields */}, nil)
+    designGeneration, err := client.DesignGeneration(nil).Create(map[string]any{/* fields */}, nil)
     if err != nil { /* handle */ }
-    // designgeneration is the returned record
+    // designGeneration is the returned record
 
 Only `Direct()` returns a response envelope — a `map[string]any` with
 `"ok"`, `"status"`, `"headers"`, and `"data"` keys.
@@ -285,7 +285,7 @@ API path: `/generate`
 
 ### DesignGeneration
 
-Create an instance: `design_generation := client.DesignGeneration(nil)`
+Create an instance: `designGeneration := client.DesignGeneration(nil)`
 
 #### Operations
 
@@ -312,8 +312,12 @@ Create an instance: `design_generation := client.DesignGeneration(nil)`
 
 ```go
 result, err := client.DesignGeneration(nil).Create(map[string]any{
-    "prompt": /* string */,
+    "prompt": "example_prompt",
 }, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 

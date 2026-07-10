@@ -43,7 +43,7 @@ client = StitchAiDesignSDK({
 
 ```python
 # Create — returns the bare created record (a dict)
-created = client.DesignGeneration().create({"prompt": "example"})
+created = client.DesignGeneration().create({"prompt": "example_prompt"})
 
 ```
 
@@ -290,7 +290,7 @@ Create an instance: `design_generation = client.DesignGeneration()`
 
 ```python
 design_generation = client.DesignGeneration().create({
-    "prompt": "example",  # str
+    "prompt": "example_prompt",  # str
 })
 ```
 

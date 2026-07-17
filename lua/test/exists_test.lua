@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- StitchAiDesign SDK exists test
 
 local sdk = require("stitch-ai-design_sdk")
 

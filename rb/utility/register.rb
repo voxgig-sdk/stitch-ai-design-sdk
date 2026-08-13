@@ -24,6 +24,7 @@ require_relative 'prepare_method'
 require_relative 'prepare_params'
 require_relative 'prepare_path'
 require_relative 'prepare_query'
+require_relative 'graphql'
 require_relative 'result_basic'
 require_relative 'result_body'
 require_relative 'result_headers'
@@ -55,6 +56,8 @@ StitchAiDesignUtility.registrar = ->(u) {
   u.prepare_params = StitchAiDesignUtilities::PrepareParams
   u.prepare_path = StitchAiDesignUtilities::PreparePath
   u.prepare_query = StitchAiDesignUtilities::PrepareQuery
+  u.graphql_body = StitchAiDesignUtilities::GraphqlBody
+  u.graphql_errors = StitchAiDesignUtilities::GraphqlErrors
   u.result_basic = StitchAiDesignUtilities::ResultBasic
   u.result_body = StitchAiDesignUtilities::ResultBody
   u.result_headers = StitchAiDesignUtilities::ResultHeaders

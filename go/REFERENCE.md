@@ -99,11 +99,11 @@ fmt.Println(designGeneration.GetName()) // "design_generation"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | `string` | No |  |
-| `component` | `[]any` | No |  |
+| `colorScheme` | `string` | No |  |
+| `components` | `[]any` | No |  |
 | `design` | `map[string]any` | No |  |
-| `design_id` | `string` | No |  |
-| `export_format` | `[]any` | No |  |
+| `designId` | `string` | No |  |
+| `exportFormats` | `[]any` | No |  |
 | `platform` | `string` | No |  |
 | `preview` | `string` | No |  |
 | `prompt` | `string` | Yes |  |

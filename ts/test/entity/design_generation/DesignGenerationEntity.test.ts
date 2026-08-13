@@ -26,8 +26,8 @@ import {
 describe('DesignGenerationEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when STITCHAIDESIGN_TEST_LIVE=TRUE.
-  afterEach(liveDelay('STITCHAIDESIGN_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when STITCH_AI_DESIGN_TEST_LIVE=TRUE.
+  afterEach(liveDelay('STITCH_AI_DESIGN_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = StitchAiDesignSDK.test()
@@ -62,7 +62,7 @@ describe('DesignGenerationEntity', async () => {
     const design_generation_ref01_ent = client.DesignGeneration()
     let design_generation_ref01_data = setup.data.new.design_generation['design_generation_ref01']
 
-    design_generation_ref01_data = await design_generation_ref01_ent.create(design_generation_ref01_data)
+    design_generation_ref01_data = (await design_generation_ref01_ent.create(design_generation_ref01_data)).data()
     assert(null != design_generation_ref01_data)
 
 

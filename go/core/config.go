@@ -29,14 +29,14 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "color_scheme",
+						"name": "colorScheme",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 0,
 					},
 					map[string]any{
 						"active": true,
-						"name": "component",
+						"name": "components",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 1,
@@ -50,14 +50,14 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "design_id",
+						"name": "designId",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
 					},
 					map[string]any{
 						"active": true,
-						"name": "export_format",
+						"name": "exportFormats",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 4,
@@ -107,6 +107,7 @@ func MakeConfig() map[string]any {
 							map[string]any{
 								"active": true,
 								"args": map[string]any{},
+								"kind": "http",
 								"method": "POST",
 								"orig": "/generate",
 								"parts": []any{
@@ -120,7 +121,6 @@ func MakeConfig() map[string]any {
 								"index$": 0,
 							},
 						},
-						"key$": "create",
 					},
 				},
 				"relations": map[string]any{

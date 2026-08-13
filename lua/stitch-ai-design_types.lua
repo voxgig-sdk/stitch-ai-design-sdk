@@ -7,11 +7,11 @@
 -- edit by hand.
 
 ---@class DesignGeneration
----@field color_scheme? string
----@field component? table
+---@field colorScheme? string
+---@field components? table
 ---@field design? table
----@field design_id? string
----@field export_format? table
+---@field designId? string
+---@field exportFormats? table
 ---@field platform? string
 ---@field preview? string
 ---@field prompt string
@@ -19,11 +19,11 @@
 ---@field success? boolean
 
 ---@class DesignGenerationCreateData
----@field color_scheme? string
----@field component? table
+---@field colorScheme? string
+---@field components? table
 ---@field design? table
----@field design_id? string
----@field export_format? table
+---@field designId? string
+---@field exportFormats? table
 ---@field platform? string
 ---@field preview? string
 ---@field prompt string

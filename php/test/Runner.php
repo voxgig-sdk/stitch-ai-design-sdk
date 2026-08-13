@@ -43,8 +43,8 @@ class StitchAiDesignTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('STITCHAIDESIGN_TEST_LIVE');
-        $override = self::getenv('STITCHAIDESIGN_TEST_OVERRIDE');
+        $live = self::getenv('STITCH_AI_DESIGN_TEST_LIVE');
+        $override = self::getenv('STITCH_AI_DESIGN_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class StitchAiDesignTestRunner
             }
         }
 
-        $explain = self::getenv('STITCHAIDESIGN_TEST_EXPLAIN');
+        $explain = self::getenv('STITCH_AI_DESIGN_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['STITCHAIDESIGN_TEST_EXPLAIN'] = $explain;
+            $m['STITCH_AI_DESIGN_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

@@ -91,11 +91,11 @@ local design_generation = client:DesignGeneration(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | `string` | No |  |
-| `component` | `table` | No |  |
+| `colorScheme` | `string` | No |  |
+| `components` | `table` | No |  |
 | `design` | `table` | No |  |
-| `design_id` | `string` | No |  |
-| `export_format` | `table` | No |  |
+| `designId` | `string` | No |  |
+| `exportFormats` | `table` | No |  |
 | `platform` | `string` | No |  |
 | `preview` | `string` | No |  |
 | `prompt` | `string` | Yes |  |

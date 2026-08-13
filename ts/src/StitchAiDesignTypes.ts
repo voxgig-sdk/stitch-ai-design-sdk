@@ -6,11 +6,11 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface DesignGeneration {
-  color_scheme?: string
-  component?: any[]
+  colorScheme?: string
+  components?: any[]
   design?: Record<string, any>
-  design_id?: string
-  export_format?: any[]
+  designId?: string
+  exportFormats?: any[]
   platform?: string
   preview?: string
   prompt: string
@@ -19,11 +19,11 @@ export interface DesignGeneration {
 }
 
 export interface DesignGenerationCreateData {
-  color_scheme?: string
-  component?: any[]
+  colorScheme?: string
+  components?: any[]
   design?: Record<string, any>
-  design_id?: string
-  export_format?: any[]
+  designId?: string
+  exportFormats?: any[]
   platform?: string
   preview?: string
   prompt: string

@@ -40,9 +40,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = StitchAiDesignSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = StitchAiDesignSDK.test({
+  entity: {
+    design_generation: {
+      test01: { id: 'test01', prompt: 'example_prompt' },
+    },
+  },
+})
 const designgeneration = await client.DesignGeneration().create({ prompt: 'example_prompt' })
-// designgeneration is a bare DesignGeneration populated with mock data
+// designgeneration is the DesignGeneration entity, populated with mock data
+// — call designgeneration.data() for the record itself
 console.log(designgeneration)
 ```
 
@@ -334,6 +343,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://stitch.withgoogle.com/](https://stitch.withgoogle.com/)
 

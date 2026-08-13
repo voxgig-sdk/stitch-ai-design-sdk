@@ -88,11 +88,11 @@ design_generation = client.DesignGeneration()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | `str` | No |  |
-| `component` | `list` | No |  |
+| `colorScheme` | `str` | No |  |
+| `components` | `list` | No |  |
 | `design` | `dict` | No |  |
-| `design_id` | `str` | No |  |
-| `export_format` | `list` | No |  |
+| `designId` | `str` | No |  |
+| `exportFormats` | `list` | No |  |
 | `platform` | `str` | No |  |
 | `preview` | `str` | No |  |
 | `prompt` | `str` | Yes |  |

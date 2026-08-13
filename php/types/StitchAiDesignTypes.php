@@ -15,11 +15,11 @@ declare(strict_types=1);
 /** DesignGeneration entity data model. */
 class DesignGeneration
 {
-    public ?string $color_scheme = null;
-    public ?array $component = null;
+    public ?string $colorScheme = null;
+    public ?array $components = null;
     public ?array $design = null;
-    public ?string $design_id = null;
-    public ?array $export_format = null;
+    public ?string $designId = null;
+    public ?array $exportFormats = null;
     public ?string $platform = null;
     public ?string $preview = null;
     public string $prompt;
@@ -30,11 +30,11 @@ class DesignGeneration
 /** Request payload for DesignGeneration#create. */
 class DesignGenerationCreateData
 {
-    public ?string $color_scheme = null;
-    public ?array $component = null;
+    public ?string $colorScheme = null;
+    public ?array $components = null;
     public ?array $design = null;
-    public ?string $design_id = null;
-    public ?array $export_format = null;
+    public ?string $designId = null;
+    public ?array $exportFormats = null;
     public ?string $platform = null;
     public ?string $preview = null;
     public string $prompt;

@@ -35,7 +35,7 @@ client = StitchAiDesignSDK.new({
 ### 4. Create, update, and remove
 
 ```ruby
-# create returns the bare created DesignGeneration record.
+# create returns the ENTITY — call data_get for the created DesignGeneration record.
 created = client.DesignGeneration.create({ "prompt" => "example_prompt" })
 
 ```
@@ -115,7 +115,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = StitchAiDesignSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 designgeneration = client.DesignGeneration.create({ "prompt" => "example" })
 puts designgeneration
 ```
@@ -234,11 +235,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `color_scheme` |  |
-| `component` |  |
+| `colorScheme` |  |
+| `components` |  |
 | `design` |  |
-| `design_id` |  |
-| `export_format` |  |
+| `designId` |  |
+| `exportFormats` |  |
 | `platform` |  |
 | `preview` |  |
 | `prompt` |  |
@@ -268,11 +269,11 @@ Create an instance: `design_generation = client.DesignGeneration`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `color_scheme` | `String` |  |
-| `component` | `Array` |  |
+| `colorScheme` | `String` |  |
+| `components` | `Array` |  |
 | `design` | `Hash` |  |
-| `design_id` | `String` |  |
-| `export_format` | `Array` |  |
+| `designId` | `String` |  |
+| `exportFormats` | `Array` |  |
 | `platform` | `String` |  |
 | `preview` | `String` |  |
 | `prompt` | `String` |  |

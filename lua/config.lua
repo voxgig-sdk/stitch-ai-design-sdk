@@ -29,14 +29,14 @@ local function make_config()
         ["fields"] = {
           {
             ["active"] = true,
-            ["name"] = "color_scheme",
+            ["name"] = "colorScheme",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 0,
           },
           {
             ["active"] = true,
-            ["name"] = "component",
+            ["name"] = "components",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 1,
@@ -50,14 +50,14 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "design_id",
+            ["name"] = "designId",
             ["req"] = false,
             ["type"] = "`$STRING`",
             ["index$"] = 3,
           },
           {
             ["active"] = true,
-            ["name"] = "export_format",
+            ["name"] = "exportFormats",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 4,
@@ -107,6 +107,7 @@ local function make_config()
               {
                 ["active"] = true,
                 ["args"] = {},
+                ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/generate",
                 ["parts"] = {

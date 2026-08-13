@@ -93,11 +93,11 @@ $design_generation = $client->DesignGeneration();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | `string` | No |  |
-| `component` | `array` | No |  |
+| `colorScheme` | `string` | No |  |
+| `components` | `array` | No |  |
 | `design` | `array` | No |  |
-| `design_id` | `string` | No |  |
-| `export_format` | `array` | No |  |
+| `designId` | `string` | No |  |
+| `exportFormats` | `array` | No |  |
 | `platform` | `string` | No |  |
 | `preview` | `string` | No |  |
 | `prompt` | `string` | Yes |  |

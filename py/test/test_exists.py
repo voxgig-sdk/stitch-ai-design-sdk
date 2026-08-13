@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# StitchAiDesign SDK exists test
 
 import pytest
 from stitchaidesign_sdk import StitchAiDesignSDK

@@ -6,12 +6,12 @@ main: kit: entity: design_generation: {
 
   fields: [
     {
-      name: "color_scheme"
+      name: "colorScheme"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "component"
+      name: "components"
       req: false
       type: "`$ARRAY`"
     }
@@ -21,12 +21,12 @@ main: kit: entity: design_generation: {
       type: "`$OBJECT`"
     }
     {
-      name: "design_id"
+      name: "designId"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "export_format"
+      name: "exportFormats"
       req: false
       type: "`$ARRAY`"
     }

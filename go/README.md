@@ -263,11 +263,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"color_scheme"` |  |
-| `"component"` |  |
+| `"colorScheme"` |  |
+| `"components"` |  |
 | `"design"` |  |
-| `"design_id"` |  |
-| `"export_format"` |  |
+| `"designId"` |  |
+| `"exportFormats"` |  |
 | `"platform"` |  |
 | `"preview"` |  |
 | `"prompt"` |  |
@@ -297,11 +297,11 @@ Create an instance: `designGeneration := client.DesignGeneration(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `color_scheme` | `string` |  |
-| `component` | `[]any` |  |
+| `colorScheme` | `string` |  |
+| `components` | `[]any` |  |
 | `design` | `map[string]any` |  |
-| `design_id` | `string` |  |
-| `export_format` | `[]any` |  |
+| `designId` | `string` |  |
+| `exportFormats` | `[]any` |  |
 | `platform` | `string` |  |
 | `preview` | `string` |  |
 | `prompt` | `string` |  |

@@ -23,8 +23,8 @@ module StitchAiDesignTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("STITCHAIDESIGN_TEST_LIVE")
-    override = getenv("STITCHAIDESIGN_TEST_OVERRIDE")
+    live = getenv("STITCH_AI_DESIGN_TEST_LIVE")
+    override = getenv("STITCH_AI_DESIGN_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module StitchAiDesignTestRunner
       end
     end
 
-    explain = getenv("STITCHAIDESIGN_TEST_EXPLAIN")
-    m["STITCHAIDESIGN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("STITCH_AI_DESIGN_TEST_EXPLAIN")
+    m["STITCH_AI_DESIGN_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

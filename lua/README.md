@@ -217,9 +217,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local design_generation, err = client:DesignGeneration():load()
+    local design_generation, err = client:DesignGeneration():list()
     if err then error(err) end
-    -- design_generation is the loaded record
+    -- design_generation is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -230,11 +230,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `color_scheme` |  |
-| `component` |  |
+| `colorScheme` |  |
+| `components` |  |
 | `design` |  |
-| `design_id` |  |
-| `export_format` |  |
+| `designId` |  |
+| `exportFormats` |  |
 | `platform` |  |
 | `preview` |  |
 | `prompt` |  |
@@ -264,11 +264,11 @@ Create an instance: `local design_generation = client:DesignGeneration(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `color_scheme` | `string` |  |
-| `component` | `table` |  |
+| `colorScheme` | `string` |  |
+| `components` | `table` |  |
 | `design` | `table` |  |
-| `design_id` | `string` |  |
-| `export_format` | `table` |  |
+| `designId` | `string` |  |
+| `exportFormats` | `table` |  |
 | `platform` | `string` |  |
 | `preview` | `string` |  |
 | `prompt` | `string` |  |

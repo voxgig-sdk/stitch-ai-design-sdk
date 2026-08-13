@@ -16,11 +16,11 @@
 import pytest
 
 from stitchaidesign_sdk import StitchAiDesignSDK
-from core.error import StitchAiDesignError
-from core.result import StitchAiDesignResult
-from core.response import StitchAiDesignResponse
-from core.spec import StitchAiDesignSpec
-from feature.base_feature import StitchAiDesignBaseFeature
+from stitchaidesign_sdk.core.error import StitchAiDesignError
+from stitchaidesign_sdk.core.result import StitchAiDesignResult
+from stitchaidesign_sdk.core.response import StitchAiDesignResponse
+from stitchaidesign_sdk.core.spec import StitchAiDesignSpec
+from stitchaidesign_sdk.feature.base_feature import StitchAiDesignBaseFeature
 
 
 def _client():

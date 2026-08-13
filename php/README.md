@@ -36,7 +36,7 @@ $client = new StitchAiDesignSDK([
 ### 4. Create, update, and remove
 
 ```php
-// create() returns the bare created DesignGeneration record.
+// create() returns the ENTITY — call data_get() for the created DesignGeneration record.
 $created = $client->DesignGeneration()->create(["prompt" => "example_prompt"]);
 
 ```
@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = StitchAiDesignSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $designgeneration = $client->DesignGeneration()->create(["prompt" => "example"]);
 print_r($designgeneration);
 ```
@@ -222,7 +223,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -244,11 +245,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `color_scheme` |  |
-| `component` |  |
+| `colorScheme` |  |
+| `components` |  |
 | `design` |  |
-| `design_id` |  |
-| `export_format` |  |
+| `designId` |  |
+| `exportFormats` |  |
 | `platform` |  |
 | `preview` |  |
 | `prompt` |  |
@@ -278,11 +279,11 @@ Create an instance: `$design_generation = $client->DesignGeneration();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `color_scheme` | `string` |  |
-| `component` | `array` |  |
+| `colorScheme` | `string` |  |
+| `components` | `array` |  |
 | `design` | `array` |  |
-| `design_id` | `string` |  |
-| `export_format` | `array` |  |
+| `designId` | `string` |  |
+| `exportFormats` | `array` |  |
 | `platform` | `string` |  |
 | `preview` | `string` |  |
 | `prompt` | `string` |  |

@@ -29,7 +29,7 @@ describe("DesignGenerationEntity", function()
     -- The basic flow consumes synthetic IDs from the fixture. In live mode
     -- without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup.synthetic_only then
-      pending("live entity test uses synthetic IDs from fixture — set STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID JSON to run live")
+      pending("live entity test uses synthetic IDs from fixture — set STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID JSON to run live")
       return
     end
     local client = setup.client
@@ -41,7 +41,7 @@ describe("DesignGenerationEntity", function()
 
     local design_generation_ref01_data_result, err = design_generation_ref01_ent:create(design_generation_ref01_data, nil)
     assert.is_nil(err)
-    design_generation_ref01_data = helpers.to_map(design_generation_ref01_data_result)
+    design_generation_ref01_data = helpers.to_map(type(design_generation_ref01_data_result) == 'table' and design_generation_ref01_data_result.data_get and design_generation_ref01_data_result:data_get() or design_generation_ref01_data_result)
     assert.is_not_nil(design_generation_ref01_data)
 
   end)
@@ -79,39 +79,39 @@ function design_generation_basic_setup(extra)
   -- Detect ENTID env override before envOverride consumes it. When live
   -- mode is on without a real override, the basic test runs against synthetic
   -- IDs from the fixture and 4xx's. Surface this so the test can skip.
-  local entid_env_raw = os.getenv("STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID")
+  local entid_env_raw = os.getenv("STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID")
   local idmap_overridden = entid_env_raw ~= nil and entid_env_raw:match("^%s*{") ~= nil
 
   local env = runner.env_override({
-    ["STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID"] = idmap,
-    ["STITCHAIDESIGN_TEST_LIVE"] = "FALSE",
-    ["STITCHAIDESIGN_TEST_EXPLAIN"] = "FALSE",
-    ["STITCHAIDESIGN_APIKEY"] = "NONE",
+    ["STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID"] = idmap,
+    ["STITCH_AI_DESIGN_TEST_LIVE"] = "FALSE",
+    ["STITCH_AI_DESIGN_TEST_EXPLAIN"] = "FALSE",
+    ["STITCH_AI_DESIGN_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
-    env["STITCHAIDESIGN_TEST_DESIGN_GENERATION_ENTID"])
+    env["STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID"])
   if idmap_resolved == nil then
     idmap_resolved = helpers.to_map(idmap)
   end
 
-  if env["STITCHAIDESIGN_TEST_LIVE"] == "TRUE" then
+  if env["STITCH_AI_DESIGN_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
-        apikey = env["STITCHAIDESIGN_APIKEY"],
+        apikey = env["STITCH_AI_DESIGN_APIKEY"],
       },
       extra or {},
     })
     client = sdk.new(helpers.to_map(merged_opts))
   end
 
-  local live = env["STITCHAIDESIGN_TEST_LIVE"] == "TRUE"
+  local live = env["STITCH_AI_DESIGN_TEST_LIVE"] == "TRUE"
   return {
     client = client,
     data = entity_data,
     idmap = idmap_resolved,
     env = env,
-    explain = env["STITCHAIDESIGN_TEST_EXPLAIN"] == "TRUE",
+    explain = env["STITCH_AI_DESIGN_TEST_EXPLAIN"] == "TRUE",
     live = live,
     synthetic_only = live and not idmap_overridden,
     now = os.time() * 1000,

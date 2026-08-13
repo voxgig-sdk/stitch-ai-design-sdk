@@ -94,11 +94,11 @@ design_generation = client.DesignGeneration
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color_scheme` | `String` | No |  |
-| `component` | `Array` | No |  |
+| `colorScheme` | `String` | No |  |
+| `components` | `Array` | No |  |
 | `design` | `Hash` | No |  |
-| `design_id` | `String` | No |  |
-| `export_format` | `Array` | No |  |
+| `designId` | `String` | No |  |
+| `exportFormats` | `Array` | No |  |
 | `platform` | `String` | No |  |
 | `preview` | `String` | No |  |
 | `prompt` | `String` | Yes |  |

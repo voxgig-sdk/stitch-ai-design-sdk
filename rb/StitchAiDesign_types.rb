@@ -10,19 +10,19 @@
 
 # DesignGeneration entity data model.
 #
-# @!attribute [rw] color_scheme
+# @!attribute [rw] colorScheme
 #   @return [String, nil]
 #
-# @!attribute [rw] component
+# @!attribute [rw] components
 #   @return [Array, nil]
 #
 # @!attribute [rw] design
 #   @return [Hash, nil]
 #
-# @!attribute [rw] design_id
+# @!attribute [rw] designId
 #   @return [String, nil]
 #
-# @!attribute [rw] export_format
+# @!attribute [rw] exportFormats
 #   @return [Array, nil]
 #
 # @!attribute [rw] platform
@@ -40,11 +40,11 @@
 # @!attribute [rw] success
 #   @return [Boolean, nil]
 DesignGeneration = Struct.new(
-  :color_scheme,
-  :component,
+  :colorScheme,
+  :components,
   :design,
-  :design_id,
-  :export_format,
+  :designId,
+  :exportFormats,
   :platform,
   :preview,
   :prompt,
@@ -55,19 +55,19 @@ DesignGeneration = Struct.new(
 
 # Request payload for DesignGeneration#create.
 #
-# @!attribute [rw] color_scheme
+# @!attribute [rw] colorScheme
 #   @return [String, nil]
 #
-# @!attribute [rw] component
+# @!attribute [rw] components
 #   @return [Array, nil]
 #
 # @!attribute [rw] design
 #   @return [Hash, nil]
 #
-# @!attribute [rw] design_id
+# @!attribute [rw] designId
 #   @return [String, nil]
 #
-# @!attribute [rw] export_format
+# @!attribute [rw] exportFormats
 #   @return [Array, nil]
 #
 # @!attribute [rw] platform
@@ -85,11 +85,11 @@ DesignGeneration = Struct.new(
 # @!attribute [rw] success
 #   @return [Boolean, nil]
 DesignGenerationCreateData = Struct.new(
-  :color_scheme,
-  :component,
+  :colorScheme,
+  :components,
   :design,
-  :design_id,
-  :export_format,
+  :designId,
+  :exportFormats,
   :platform,
   :preview,
   :prompt,

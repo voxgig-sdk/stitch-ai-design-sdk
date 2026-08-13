@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import StitchAiDesignControl
-from core.error import StitchAiDesignError
-from core.result import StitchAiDesignResult
-from core.spec import StitchAiDesignSpec
+from stitchaidesign_sdk.config import make_config
+from stitchaidesign_sdk.features import _make_feature
+from stitchaidesign_sdk.core.control import StitchAiDesignControl
+from stitchaidesign_sdk.core.error import StitchAiDesignError
+from stitchaidesign_sdk.core.result import StitchAiDesignResult
+from stitchaidesign_sdk.core.spec import StitchAiDesignSpec
 
 
 # True when this SDK was generated with the named feature.

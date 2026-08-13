@@ -38,7 +38,7 @@ const client = new StitchAiDesignSDK({
 ### 4. Create, update, and remove
 
 ```ts
-// Create — returns the created DesignGeneration
+// Create — returns the created DesignGeneration ENTITY (.data() for the record)
 const created = await client.DesignGeneration().create({
   prompt: 'example_prompt',
 })
@@ -120,7 +120,8 @@ Create a mock client for unit testing — no server required:
 const client = StitchAiDesignSDK.test()
 
 const designgeneration = await client.DesignGeneration().create({ prompt: 'example_prompt' })
-// designgeneration is a bare entity populated with mock response data
+// designgeneration is the entity, populated with mock response data
+// — call designgeneration.data() for the record itself
 console.log(designgeneration)
 ```
 
@@ -287,11 +288,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `color_scheme` |  |
-| `component` |  |
+| `colorScheme` |  |
+| `components` |  |
 | `design` |  |
-| `design_id` |  |
-| `export_format` |  |
+| `designId` |  |
+| `exportFormats` |  |
 | `platform` |  |
 | `preview` |  |
 | `prompt` |  |
@@ -321,11 +322,11 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `color_scheme` | `string` |  |
-| `component` | `any[]` |  |
+| `colorScheme` | `string` |  |
+| `components` | `any[]` |  |
 | `design` | `Record<string, any>` |  |
-| `design_id` | `string` |  |
-| `export_format` | `any[]` |  |
+| `designId` | `string` |  |
+| `exportFormats` | `any[]` |  |
 | `platform` | `string` |  |
 | `preview` | `string` |  |
 | `prompt` | `string` |  |

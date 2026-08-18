@@ -40,7 +40,7 @@ class StitchAiDesignSDK
         $utility = new StitchAiDesignUtility();
         $this->_utility = $utility;
 
-        $config = StitchAiDesignConfig::make_config();
+        $config = StitchAiDesignConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

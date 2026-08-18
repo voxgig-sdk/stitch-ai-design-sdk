@@ -36,7 +36,7 @@ class Config {
 
 
   options = {
-    base: 'https://stitch.withgoogle.com/api',
+    base: "https://stitch.withgoogle.com/api",
 
     auth: {
       prefix: '',
@@ -59,74 +59,45 @@ class Config {
     "design_generation": {
       "fields": [
         {
-          "active": true,
           "name": "colorScheme",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 0
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "components",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 1
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "design",
-          "req": false,
-          "type": "`$OBJECT`",
-          "index$": 2
+          "type": "`$OBJECT`"
         },
         {
-          "active": true,
           "name": "designId",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 3
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "exportFormats",
-          "req": false,
-          "type": "`$ARRAY`",
-          "index$": 4
+          "type": "`$ARRAY`"
         },
         {
-          "active": true,
           "name": "platform",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 5
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "preview",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 6
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "prompt",
           "req": true,
-          "type": "`$STRING`",
-          "index$": 7
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "style",
-          "req": false,
-          "type": "`$STRING`",
-          "index$": 8
+          "type": "`$STRING`"
         },
         {
-          "active": true,
           "name": "success",
-          "req": false,
-          "type": "`$BOOLEAN`",
-          "index$": 9
+          "type": "`$BOOLEAN`"
         }
       ],
       "name": "design_generation",
@@ -136,7 +107,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "active": true,
               "args": {},
               "kind": "http",
               "method": "POST",
@@ -148,11 +118,9 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
-              },
-              "index$": 0
+              }
             }
-          ],
-          "key$": "create"
+          ]
         }
       },
       "relations": {

@@ -28,7 +28,7 @@ class StitchAiDesignSDK
     utility = StitchAiDesignUtility.new
     @_utility = utility
 
-    config = StitchAiDesignConfig.make_config
+    config = StitchAiDesignConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

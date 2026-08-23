@@ -94,15 +94,15 @@ design_generation = client.DesignGeneration
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `colorScheme` | `String` | No |  |
-| `components` | `Array` | No |  |
+| `colorScheme` | `String` | No | Preferred color scheme for the design |
+| `components` | `Array` | No | Specific UI components to include |
 | `design` | `Hash` | No |  |
-| `designId` | `String` | No |  |
-| `exportFormats` | `Array` | No |  |
-| `platform` | `String` | No |  |
-| `preview` | `String` | No |  |
-| `prompt` | `String` | Yes |  |
-| `style` | `String` | No |  |
+| `designId` | `String` | No | Unique identifier for the generated design |
+| `exportFormats` | `Array` | No | Available export formats for the design |
+| `platform` | `String` | No | Target platform for the UI design |
+| `preview` | `String` | No | URL to preview image of the generated design |
+| `prompt` | `String` | Yes | Description of the desired UI design |
+| `style` | `String` | No | Design style preferences |
 | `success` | `Boolean` | No |  |
 
 ### Operations

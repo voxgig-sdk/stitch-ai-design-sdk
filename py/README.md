@@ -242,15 +242,15 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `colorScheme` |  |
-| `components` |  |
+| `colorScheme` | Preferred color scheme for the design |
+| `components` | Specific UI components to include |
 | `design` |  |
-| `designId` |  |
-| `exportFormats` |  |
-| `platform` |  |
-| `preview` |  |
-| `prompt` |  |
-| `style` |  |
+| `designId` | Unique identifier for the generated design |
+| `exportFormats` | Available export formats for the design |
+| `platform` | Target platform for the UI design |
+| `preview` | URL to preview image of the generated design |
+| `prompt` | Description of the desired UI design |
+| `style` | Design style preferences |
 | `success` |  |
 
 Operations: Create.
@@ -276,15 +276,15 @@ Create an instance: `design_generation = client.DesignGeneration()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `str` |  |
-| `components` | `list` |  |
+| `colorScheme` | `str` | Preferred color scheme for the design |
+| `components` | `list` | Specific UI components to include |
 | `design` | `dict` |  |
-| `designId` | `str` |  |
-| `exportFormats` | `list` |  |
-| `platform` | `str` |  |
-| `preview` | `str` |  |
-| `prompt` | `str` |  |
-| `style` | `str` |  |
+| `designId` | `str` | Unique identifier for the generated design |
+| `exportFormats` | `list` | Available export formats for the design |
+| `platform` | `str` | Target platform for the UI design |
+| `preview` | `str` | URL to preview image of the generated design |
+| `prompt` | `str` | Description of the desired UI design |
+| `style` | `str` | Design style preferences |
 | `success` | `bool` |  |
 
 #### Example: Create

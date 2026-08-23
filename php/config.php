@@ -33,6 +33,9 @@ class StitchAiDesignConfig
         return [
             "main" => [
                 "name" => "StitchAiDesign",
+                "slug" => "stitch-ai-design",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -58,10 +61,12 @@ class StitchAiDesignConfig
           'fields' => [
             [
               'name' => 'colorScheme',
+              'short' => 'Preferred color scheme for the design',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'components',
+              'short' => 'Specific UI components to include',
               'type' => '`$ARRAY`',
             ],
             [
@@ -70,27 +75,33 @@ class StitchAiDesignConfig
             ],
             [
               'name' => 'designId',
+              'short' => 'Unique identifier for the generated design',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'exportFormats',
+              'short' => 'Available export formats for the design',
               'type' => '`$ARRAY`',
             ],
             [
               'name' => 'platform',
+              'short' => 'Target platform for the UI design',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'preview',
+              'short' => 'URL to preview image of the generated design',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'prompt',
               'req' => true,
+              'short' => 'Description of the desired UI design',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'style',
+              'short' => 'Design style preferences',
               'type' => '`$STRING`',
             ],
             [

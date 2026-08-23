@@ -117,15 +117,15 @@ const design_generation = client.DesignGeneration()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `colorScheme` | `string` | No |  |
-| `components` | `any[]` | No |  |
+| `colorScheme` | `string` | No | Preferred color scheme for the design |
+| `components` | `any[]` | No | Specific UI components to include |
 | `design` | `Record<string, any>` | No |  |
-| `designId` | `string` | No |  |
-| `exportFormats` | `any[]` | No |  |
-| `platform` | `string` | No |  |
-| `preview` | `string` | No |  |
-| `prompt` | `string` | Yes |  |
-| `style` | `string` | No |  |
+| `designId` | `string` | No | Unique identifier for the generated design |
+| `exportFormats` | `any[]` | No | Available export formats for the design |
+| `platform` | `string` | No | Target platform for the UI design |
+| `preview` | `string` | No | URL to preview image of the generated design |
+| `prompt` | `string` | Yes | Description of the desired UI design |
+| `style` | `string` | No | Design style preferences |
 | `success` | `boolean` | No |  |
 
 ### Operations

@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -288,15 +288,15 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `colorScheme` |  |
-| `components` |  |
+| `colorScheme` | Preferred color scheme for the design |
+| `components` | Specific UI components to include |
 | `design` |  |
-| `designId` |  |
-| `exportFormats` |  |
-| `platform` |  |
-| `preview` |  |
-| `prompt` |  |
-| `style` |  |
+| `designId` | Unique identifier for the generated design |
+| `exportFormats` | Available export formats for the design |
+| `platform` | Target platform for the UI design |
+| `preview` | URL to preview image of the generated design |
+| `prompt` | Description of the desired UI design |
+| `style` | Design style preferences |
 | `success` |  |
 
 Operations: create.
@@ -322,15 +322,15 @@ Create an instance: `const design_generation = client.DesignGeneration()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `string` |  |
-| `components` | `any[]` |  |
+| `colorScheme` | `string` | Preferred color scheme for the design |
+| `components` | `any[]` | Specific UI components to include |
 | `design` | `Record<string, any>` |  |
-| `designId` | `string` |  |
-| `exportFormats` | `any[]` |  |
-| `platform` | `string` |  |
-| `preview` | `string` |  |
-| `prompt` | `string` |  |
-| `style` | `string` |  |
+| `designId` | `string` | Unique identifier for the generated design |
+| `exportFormats` | `any[]` | Available export formats for the design |
+| `platform` | `string` | Target platform for the UI design |
+| `preview` | `string` | URL to preview image of the generated design |
+| `prompt` | `string` | Description of the desired UI design |
+| `style` | `string` | Design style preferences |
 | `success` | `boolean` |  |
 
 #### Example: Create

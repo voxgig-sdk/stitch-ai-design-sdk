@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "StitchAiDesign",
+      slug = "stitch-ai-design",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -32,10 +35,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "colorScheme",
+            ["short"] = "Preferred color scheme for the design",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "components",
+            ["short"] = "Specific UI components to include",
             ["type"] = "`$ARRAY`",
           },
           {
@@ -44,27 +49,33 @@ local function make_config()
           },
           {
             ["name"] = "designId",
+            ["short"] = "Unique identifier for the generated design",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "exportFormats",
+            ["short"] = "Available export formats for the design",
             ["type"] = "`$ARRAY`",
           },
           {
             ["name"] = "platform",
+            ["short"] = "Target platform for the UI design",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "preview",
+            ["short"] = "URL to preview image of the generated design",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "prompt",
             ["req"] = true,
+            ["short"] = "Description of the desired UI design",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "style",
+            ["short"] = "Design style preferences",
             ["type"] = "`$STRING`",
           },
           {

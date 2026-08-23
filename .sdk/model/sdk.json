@@ -36,12 +36,14 @@
               "active": true,
               "name": "colorScheme",
               "req": false,
+              "short": "Preferred color scheme for the design",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "components",
               "req": false,
+              "short": "Specific UI components to include",
               "type": "`$ARRAY`"
             },
             {
@@ -54,36 +56,42 @@
               "active": true,
               "name": "designId",
               "req": false,
+              "short": "Unique identifier for the generated design",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "exportFormats",
               "req": false,
+              "short": "Available export formats for the design",
               "type": "`$ARRAY`"
             },
             {
               "active": true,
               "name": "platform",
               "req": false,
+              "short": "Target platform for the UI design",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "preview",
               "req": false,
+              "short": "URL to preview image of the generated design",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "prompt",
               "req": true,
+              "short": "Description of the desired UI design",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "style",
               "req": false,
+              "short": "Design style preferences",
               "type": "`$STRING`"
             },
             {

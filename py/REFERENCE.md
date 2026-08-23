@@ -88,15 +88,15 @@ design_generation = client.DesignGeneration()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `colorScheme` | `str` | No |  |
-| `components` | `list` | No |  |
+| `colorScheme` | `str` | No | Preferred color scheme for the design |
+| `components` | `list` | No | Specific UI components to include |
 | `design` | `dict` | No |  |
-| `designId` | `str` | No |  |
-| `exportFormats` | `list` | No |  |
-| `platform` | `str` | No |  |
-| `preview` | `str` | No |  |
-| `prompt` | `str` | Yes |  |
-| `style` | `str` | No |  |
+| `designId` | `str` | No | Unique identifier for the generated design |
+| `exportFormats` | `list` | No | Available export formats for the design |
+| `platform` | `str` | No | Target platform for the UI design |
+| `preview` | `str` | No | URL to preview image of the generated design |
+| `prompt` | `str` | Yes | Description of the desired UI design |
+| `style` | `str` | No | Design style preferences |
 | `success` | `bool` | No |  |
 
 ### Operations

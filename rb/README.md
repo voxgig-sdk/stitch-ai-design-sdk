@@ -235,15 +235,15 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `colorScheme` |  |
-| `components` |  |
+| `colorScheme` | Preferred color scheme for the design |
+| `components` | Specific UI components to include |
 | `design` |  |
-| `designId` |  |
-| `exportFormats` |  |
-| `platform` |  |
-| `preview` |  |
-| `prompt` |  |
-| `style` |  |
+| `designId` | Unique identifier for the generated design |
+| `exportFormats` | Available export formats for the design |
+| `platform` | Target platform for the UI design |
+| `preview` | URL to preview image of the generated design |
+| `prompt` | Description of the desired UI design |
+| `style` | Design style preferences |
 | `success` |  |
 
 Operations: Create.
@@ -269,15 +269,15 @@ Create an instance: `design_generation = client.DesignGeneration`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `String` |  |
-| `components` | `Array` |  |
+| `colorScheme` | `String` | Preferred color scheme for the design |
+| `components` | `Array` | Specific UI components to include |
 | `design` | `Hash` |  |
-| `designId` | `String` |  |
-| `exportFormats` | `Array` |  |
-| `platform` | `String` |  |
-| `preview` | `String` |  |
-| `prompt` | `String` |  |
-| `style` | `String` |  |
+| `designId` | `String` | Unique identifier for the generated design |
+| `exportFormats` | `Array` | Available export formats for the design |
+| `platform` | `String` | Target platform for the UI design |
+| `preview` | `String` | URL to preview image of the generated design |
+| `prompt` | `String` | Description of the desired UI design |
+| `style` | `String` | Design style preferences |
 | `success` | `Boolean` |  |
 
 #### Example: Create

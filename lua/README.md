@@ -230,15 +230,15 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `colorScheme` |  |
-| `components` |  |
+| `colorScheme` | Preferred color scheme for the design |
+| `components` | Specific UI components to include |
 | `design` |  |
-| `designId` |  |
-| `exportFormats` |  |
-| `platform` |  |
-| `preview` |  |
-| `prompt` |  |
-| `style` |  |
+| `designId` | Unique identifier for the generated design |
+| `exportFormats` | Available export formats for the design |
+| `platform` | Target platform for the UI design |
+| `preview` | URL to preview image of the generated design |
+| `prompt` | Description of the desired UI design |
+| `style` | Design style preferences |
 | `success` |  |
 
 Operations: Create.
@@ -264,15 +264,15 @@ Create an instance: `local design_generation = client:DesignGeneration(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `string` |  |
-| `components` | `table` |  |
+| `colorScheme` | `string` | Preferred color scheme for the design |
+| `components` | `table` | Specific UI components to include |
 | `design` | `table` |  |
-| `designId` | `string` |  |
-| `exportFormats` | `table` |  |
-| `platform` | `string` |  |
-| `preview` | `string` |  |
-| `prompt` | `string` |  |
-| `style` | `string` |  |
+| `designId` | `string` | Unique identifier for the generated design |
+| `exportFormats` | `table` | Available export formats for the design |
+| `platform` | `string` | Target platform for the UI design |
+| `preview` | `string` | URL to preview image of the generated design |
+| `prompt` | `string` | Description of the desired UI design |
+| `style` | `string` | Design style preferences |
 | `success` | `boolean` |  |
 
 #### Example: Create

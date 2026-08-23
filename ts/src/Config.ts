@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'StitchAiDesign',
+        slug: "stitch-ai-design",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -60,10 +71,12 @@ class Config {
       "fields": [
         {
           "name": "colorScheme",
+          "short": "Preferred color scheme for the design",
           "type": "`$STRING`"
         },
         {
           "name": "components",
+          "short": "Specific UI components to include",
           "type": "`$ARRAY`"
         },
         {
@@ -72,27 +85,33 @@ class Config {
         },
         {
           "name": "designId",
+          "short": "Unique identifier for the generated design",
           "type": "`$STRING`"
         },
         {
           "name": "exportFormats",
+          "short": "Available export formats for the design",
           "type": "`$ARRAY`"
         },
         {
           "name": "platform",
+          "short": "Target platform for the UI design",
           "type": "`$STRING`"
         },
         {
           "name": "preview",
+          "short": "URL to preview image of the generated design",
           "type": "`$STRING`"
         },
         {
           "name": "prompt",
           "req": true,
+          "short": "Description of the desired UI design",
           "type": "`$STRING`"
         },
         {
           "name": "style",
+          "short": "Design style preferences",
           "type": "`$STRING`"
         },
         {

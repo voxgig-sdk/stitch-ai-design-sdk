@@ -245,15 +245,15 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `colorScheme` |  |
-| `components` |  |
+| `colorScheme` | Preferred color scheme for the design |
+| `components` | Specific UI components to include |
 | `design` |  |
-| `designId` |  |
-| `exportFormats` |  |
-| `platform` |  |
-| `preview` |  |
-| `prompt` |  |
-| `style` |  |
+| `designId` | Unique identifier for the generated design |
+| `exportFormats` | Available export formats for the design |
+| `platform` | Target platform for the UI design |
+| `preview` | URL to preview image of the generated design |
+| `prompt` | Description of the desired UI design |
+| `style` | Design style preferences |
 | `success` |  |
 
 Operations: Create.
@@ -279,15 +279,15 @@ Create an instance: `$design_generation = $client->DesignGeneration();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `string` |  |
-| `components` | `array` |  |
+| `colorScheme` | `string` | Preferred color scheme for the design |
+| `components` | `array` | Specific UI components to include |
 | `design` | `array` |  |
-| `designId` | `string` |  |
-| `exportFormats` | `array` |  |
-| `platform` | `string` |  |
-| `preview` | `string` |  |
-| `prompt` | `string` |  |
-| `style` | `string` |  |
+| `designId` | `string` | Unique identifier for the generated design |
+| `exportFormats` | `array` | Available export formats for the design |
+| `platform` | `string` | Target platform for the UI design |
+| `preview` | `string` | URL to preview image of the generated design |
+| `prompt` | `string` | Description of the desired UI design |
+| `style` | `string` | Design style preferences |
 | `success` | `bool` |  |
 
 #### Example: Create

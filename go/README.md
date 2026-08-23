@@ -6,7 +6,7 @@ The Golang SDK for the StitchAiDesign API — an entity-oriented client using st
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.DesignGeneration(nil)` — each with the same small set of operations (`Create`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -263,15 +263,15 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"colorScheme"` |  |
-| `"components"` |  |
+| `"colorScheme"` | Preferred color scheme for the design |
+| `"components"` | Specific UI components to include |
 | `"design"` |  |
-| `"designId"` |  |
-| `"exportFormats"` |  |
-| `"platform"` |  |
-| `"preview"` |  |
-| `"prompt"` |  |
-| `"style"` |  |
+| `"designId"` | Unique identifier for the generated design |
+| `"exportFormats"` | Available export formats for the design |
+| `"platform"` | Target platform for the UI design |
+| `"preview"` | URL to preview image of the generated design |
+| `"prompt"` | Description of the desired UI design |
+| `"style"` | Design style preferences |
 | `"success"` |  |
 
 Operations: Create.
@@ -297,15 +297,15 @@ Create an instance: `designGeneration := client.DesignGeneration(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `colorScheme` | `string` |  |
-| `components` | `[]any` |  |
+| `colorScheme` | `string` | Preferred color scheme for the design |
+| `components` | `[]any` | Specific UI components to include |
 | `design` | `map[string]any` |  |
-| `designId` | `string` |  |
-| `exportFormats` | `[]any` |  |
-| `platform` | `string` |  |
-| `preview` | `string` |  |
-| `prompt` | `string` |  |
-| `style` | `string` |  |
+| `designId` | `string` | Unique identifier for the generated design |
+| `exportFormats` | `[]any` | Available export formats for the design |
+| `platform` | `string` | Target platform for the UI design |
+| `preview` | `string` | URL to preview image of the generated design |
+| `prompt` | `string` | Description of the desired UI design |
+| `style` | `string` | Design style preferences |
 | `success` | `bool` |  |
 
 #### Example: Create

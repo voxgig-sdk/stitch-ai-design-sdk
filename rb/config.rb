@@ -19,6 +19,9 @@ module StitchAiDesignConfig
     {
       "main" => {
         "name" => "StitchAiDesign",
+        "slug" => "stitch-ai-design",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -44,10 +47,12 @@ module StitchAiDesignConfig
           "fields" => [
             {
               "name" => "colorScheme",
+              "short" => "Preferred color scheme for the design",
               "type" => "`$STRING`",
             },
             {
               "name" => "components",
+              "short" => "Specific UI components to include",
               "type" => "`$ARRAY`",
             },
             {
@@ -56,27 +61,33 @@ module StitchAiDesignConfig
             },
             {
               "name" => "designId",
+              "short" => "Unique identifier for the generated design",
               "type" => "`$STRING`",
             },
             {
               "name" => "exportFormats",
+              "short" => "Available export formats for the design",
               "type" => "`$ARRAY`",
             },
             {
               "name" => "platform",
+              "short" => "Target platform for the UI design",
               "type" => "`$STRING`",
             },
             {
               "name" => "preview",
+              "short" => "URL to preview image of the generated design",
               "type" => "`$STRING`",
             },
             {
               "name" => "prompt",
               "req" => true,
+              "short" => "Description of the desired UI design",
               "type" => "`$STRING`",
             },
             {
               "name" => "style",
+              "short" => "Design style preferences",
               "type" => "`$STRING`",
             },
             {

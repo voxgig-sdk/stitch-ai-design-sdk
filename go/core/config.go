@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "StitchAiDesign",
+			"slug": "stitch-ai-design",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -36,10 +39,12 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "colorScheme",
+						"short": "Preferred color scheme for the design",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "components",
+						"short": "Specific UI components to include",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
@@ -48,27 +53,33 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "designId",
+						"short": "Unique identifier for the generated design",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "exportFormats",
+						"short": "Available export formats for the design",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "platform",
+						"short": "Target platform for the UI design",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "preview",
+						"short": "URL to preview image of the generated design",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "prompt",
 						"req": true,
+						"short": "Description of the desired UI design",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "style",
+						"short": "Design style preferences",
 						"type": "`$STRING`",
 					},
 					map[string]any{

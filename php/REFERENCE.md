@@ -93,15 +93,15 @@ $design_generation = $client->DesignGeneration();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `colorScheme` | `string` | No |  |
-| `components` | `array` | No |  |
+| `colorScheme` | `string` | No | Preferred color scheme for the design |
+| `components` | `array` | No | Specific UI components to include |
 | `design` | `array` | No |  |
-| `designId` | `string` | No |  |
-| `exportFormats` | `array` | No |  |
-| `platform` | `string` | No |  |
-| `preview` | `string` | No |  |
-| `prompt` | `string` | Yes |  |
-| `style` | `string` | No |  |
+| `designId` | `string` | No | Unique identifier for the generated design |
+| `exportFormats` | `array` | No | Available export formats for the design |
+| `platform` | `string` | No | Target platform for the UI design |
+| `preview` | `string` | No | URL to preview image of the generated design |
+| `prompt` | `string` | Yes | Description of the desired UI design |
+| `style` | `string` | No | Design style preferences |
 | `success` | `bool` | No |  |
 
 ### Operations

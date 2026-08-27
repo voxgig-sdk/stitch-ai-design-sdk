@@ -28,6 +28,7 @@ module StitchAiDesignConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {

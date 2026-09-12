@@ -64,6 +64,7 @@ local function make_config()
             ["type"] = "`$STRING`",
           },
           {
+            ["format"] = "uri",
             ["name"] = "preview",
             ["short"] = "URL to preview image of the generated design",
             ["type"] = "`$STRING`",
@@ -95,13 +96,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "POST",
                 ["orig"] = "/generate",
-                ["parts"] = {
-                  "generate",
+                ["segments"] = {
+                  {
+                    ["lit"] = "generate",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "generate",
                 },
               },
             },

@@ -76,7 +76,7 @@ def design_generation_basic_setup(extra)
     "STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID" => idmap,
     "STITCH_AI_DESIGN_TEST_LIVE" => "FALSE",
     "STITCH_AI_DESIGN_TEST_EXPLAIN" => "FALSE",
-    "STITCH_AI_DESIGN_APIKEY" => "NONE",
+    "STITCH_AI_DESIGN_APIKEY" => "",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -87,6 +87,9 @@ def design_generation_basic_setup(extra)
 
   if env["STITCH_AI_DESIGN_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
+      # FIRST, so the generated fields below win: sdk-test-control.json's
+      # test.client.options adds to the live client, it does not redirect it.
+      Runner.live_client_options,
       {
         "apikey" => env["STITCH_AI_DESIGN_APIKEY"],
       },

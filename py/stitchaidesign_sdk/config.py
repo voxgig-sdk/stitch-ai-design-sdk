@@ -1,6 +1,14 @@
 # StitchAiDesign SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -85,6 +93,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "uri",
             "name": "preview",
             "short": "URL to preview image of the generated design",
             "type": "`$STRING`",
@@ -116,14 +125,19 @@ def make_config():
                 "kind": "http",
                 "method": "POST",
                 "orig": "/generate",
-                "parts": [
-                  "generate",
+                "segments": [
+                  {
+                    "lit": "generate",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "generate",
+                ],
               },
             ],
           },

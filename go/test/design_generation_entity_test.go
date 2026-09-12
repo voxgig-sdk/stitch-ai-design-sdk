@@ -52,7 +52,7 @@ func TestDesignGenerationEntity(t *testing.T) {
 		// CREATE
 		designGenerationRef01Ent := client.DesignGeneration(nil)
 		designGenerationRef01Data := core.ToMapAny(vs.GetProp(
-			vs.GetPath([]any{"new", "design_generation"}, setup.data), "design_generation_ref01"))
+			vs.GetPath(setup.data, []any{"new", "design_generation"}), "design_generation_ref01"))
 
 		designGenerationRef01DataResult, err := designGenerationRef01Ent.Create(designGenerationRef01Data, nil)
 		if err != nil {
@@ -90,7 +90,7 @@ func design_generationBasicSetup(extra map[string]any) *entityTestSetup {
 	client := sdk.TestSDK(options, extra)
 
 	// Generate idmap via transform, matching TS pattern.
-	idmap := vs.Transform(
+	idmap, _ := vs.Transform(
 		[]any{"design_generation01", "design_generation02", "design_generation03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
@@ -110,7 +110,7 @@ func design_generationBasicSetup(extra map[string]any) *entityTestSetup {
 		"STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID": idmap,
 		"STITCH_AI_DESIGN_TEST_LIVE":      "FALSE",
 		"STITCH_AI_DESIGN_TEST_EXPLAIN":   "FALSE",
-		"STITCH_AI_DESIGN_APIKEY":         "NONE",
+		"STITCH_AI_DESIGN_APIKEY":         "",
 	})
 
 	idmapResolved := core.ToMapAny(env["STITCH_AI_DESIGN_TEST_DESIGN_GENERATION_ENTID"])
@@ -119,11 +119,23 @@ func design_generationBasicSetup(extra map[string]any) *entityTestSetup {
 	}
 
 	if env["STITCH_AI_DESIGN_TEST_LIVE"] == "TRUE" {
+		// An empty map, not a nil one: Merge returns nil when its last entry
+		// is nil, and BasicSetup is normally called with no extras - so a
+		// bare nil silently discarded the apikey and server values below.
+		extraOpts := extra
+		if extraOpts == nil {
+			extraOpts = map[string]any{}
+		}
+
 		mergedOpts := vs.Merge([]any{
+			// liveClientOptions() FIRST, so the generated fields below win:
+			// sdk-test-control.json's test.client.options adds to the live
+			// client, it does not redirect it.
+			liveClientOptions(),
 			map[string]any{
 				"apikey": env["STITCH_AI_DESIGN_APIKEY"],
 			},
-			extra,
+			extraOpts,
 		})
 		client = sdk.NewStitchAiDesignSDK(core.ToMapAny(mergedOpts))
 	}

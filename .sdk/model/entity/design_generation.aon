@@ -41,6 +41,7 @@ main: kit: entity: design_generation: {
       type: "`$STRING`"
     }
     {
+      format: "uri"
       name: "preview"
       req: false
       short: "URL to preview image of the generated design"
@@ -73,8 +74,10 @@ main: kit: entity: design_generation: {
         {
           method: "POST"
           orig: "/generate"
-          parts: [
-            "generate"
+          segments: [
+            {
+              lit: "generate"
+            }
           ]
           transform: {
             req: "`reqdata`"

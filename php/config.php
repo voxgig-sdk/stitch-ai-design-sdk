@@ -90,6 +90,7 @@ class StitchAiDesignConfig
               'type' => '`$STRING`',
             ],
             [
+              'format' => 'uri',
               'name' => 'preview',
               'short' => 'URL to preview image of the generated design',
               'type' => '`$STRING`',
@@ -121,13 +122,18 @@ class StitchAiDesignConfig
                   'kind' => 'http',
                   'method' => 'POST',
                   'orig' => '/generate',
-                  'parts' => [
-                    'generate',
+                  'segments' => [
+                    [
+                      'lit' => 'generate',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'generate',
                   ],
                 ],
               ],

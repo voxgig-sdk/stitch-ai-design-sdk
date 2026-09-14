@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design'
+import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design-sdk'
 
 const client = new StitchAiDesignSDK({
   apikey: process.env.STITCH_AI_DESIGN_APIKEY,
@@ -424,7 +424,7 @@ stitch-ai-design/
 Import the SDK from the package root:
 
 ```ts
-import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design'
+import { StitchAiDesignSDK } from '@voxgig-sdk/stitch-ai-design-sdk'
 ```
 
 ### Entity state

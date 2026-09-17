@@ -104,6 +104,7 @@ class Config {
         base: "https://stitch.withgoogle.com/api",
         auth: {
             prefix: '',
+            name: 'X-API-Key',
         },
         headers: {
             "content-type": "application/json"

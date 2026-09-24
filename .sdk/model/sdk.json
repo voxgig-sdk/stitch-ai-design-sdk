@@ -24,83 +24,159 @@
         "repr": "auto"
       },
       "contributor": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "published": false,
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "design_generation": {
           "active": true,
           "alias": {
             "field": {}
           },
-          "fields": [
-            {
-              "active": true,
-              "name": "colorScheme",
-              "req": false,
-              "short": "Preferred color scheme for the design",
-              "type": "`$STRING`"
+          "fields": {
+            "colorScheme": {
+              "a": true,
+              "h": "Color Scheme",
+              "n": "colorScheme",
+              "r": false,
+              "sh": "Preferred color scheme for the design",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "components",
-              "req": false,
-              "short": "Specific UI components to include",
-              "type": "`$ARRAY`"
+            "components": {
+              "a": true,
+              "h": "Components",
+              "n": "components",
+              "r": false,
+              "sh": "Specific UI components to include",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "design",
-              "req": false,
-              "type": "`$OBJECT`"
+            "design": {
+              "a": true,
+              "h": "Design",
+              "n": "design",
+              "r": false,
+              "t": "`$OBJECT`"
             },
-            {
-              "active": true,
-              "name": "designId",
-              "req": false,
-              "short": "Unique identifier for the generated design",
-              "type": "`$STRING`"
+            "designId": {
+              "a": true,
+              "h": "Design Id",
+              "n": "designId",
+              "r": false,
+              "sh": "Unique identifier for the generated design",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "exportFormats",
-              "req": false,
-              "short": "Available export formats for the design",
-              "type": "`$ARRAY`"
+            "exportFormats": {
+              "a": true,
+              "h": "Export Formats",
+              "n": "exportFormats",
+              "r": false,
+              "sh": "Available export formats for the design",
+              "t": "`$ARRAY`"
             },
-            {
-              "active": true,
-              "name": "platform",
-              "req": false,
-              "short": "Target platform for the UI design",
-              "type": "`$STRING`"
+            "platform": {
+              "a": true,
+              "h": "Platform",
+              "n": "platform",
+              "r": false,
+              "sh": "Target platform for the UI design",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "format": "uri",
-              "name": "preview",
-              "req": false,
-              "short": "URL to preview image of the generated design",
-              "type": "`$STRING`"
+            "preview": {
+              "a": true,
+              "fo": "uri",
+              "h": "Preview",
+              "n": "preview",
+              "r": false,
+              "sh": "URL to preview image of the generated design",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "prompt",
-              "req": true,
-              "short": "Description of the desired UI design",
-              "type": "`$STRING`"
+            "prompt": {
+              "a": true,
+              "h": "Prompt",
+              "n": "prompt",
+              "r": true,
+              "sh": "Description of the desired UI design",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "style",
-              "req": false,
-              "short": "Design style preferences",
-              "type": "`$STRING`"
+            "style": {
+              "a": true,
+              "h": "Style",
+              "n": "style",
+              "r": false,
+              "sh": "Design style preferences",
+              "t": "`$STRING`"
             },
-            {
-              "active": true,
-              "name": "success",
-              "req": false,
-              "type": "`$BOOLEAN`"
+            "success": {
+              "a": true,
+              "h": "Success",
+              "n": "success",
+              "r": false,
+              "t": "`$BOOLEAN`"
             }
-          ],
+          },
           "name": "design_generation",
           "op": {
             "create": {
@@ -108,24 +184,24 @@
               "name": "create",
               "points": [
                 {
-                  "active": true,
-                  "args": {},
-                  "contract": {
+                  "a": true,
+                  "co": {
                     "id": "POST /generate",
-                    "json": "{\"operationId\":\"generateUIDesign\",\"parameters\":[],\"protocol\":\"http\",\"requestBody\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"colorScheme\":{\"description\":\"Preferred color scheme for the design\",\"example\":\"blue and white\",\"type\":\"string\"},\"components\":{\"description\":\"Specific UI components to include\",\"example\":[\"button\",\"input field\",\"logo\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"platform\":{\"description\":\"Target platform for the UI design\",\"enum\":[\"web\",\"mobile\",\"ios\",\"android\"],\"example\":\"mobile\",\"type\":\"string\"},\"prompt\":{\"description\":\"Description of the desired UI design\",\"example\":\"Create a modern login screen for a mobile banking app\",\"type\":\"string\"},\"style\":{\"description\":\"Design style preferences\",\"example\":\"minimalist\",\"type\":\"string\"}},\"required\":[\"prompt\"],\"type\":\"object\"}}},\"description\":\"Design generation parameters and requirements\",\"required\":true},\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"design\":{\"properties\":{\"components\":{\"description\":\"Array of UI components in the design\",\"items\":{\"type\":\"object\"},\"type\":\"array\"},\"layout\":{\"description\":\"Layout structure and component positioning\",\"type\":\"object\"},\"styles\":{\"description\":\"CSS or style definitions for the design\",\"type\":\"object\"}},\"type\":\"object\"},\"designId\":{\"description\":\"Unique identifier for the generated design\",\"example\":\"design_abc123xyz\",\"type\":\"string\"},\"exportFormats\":{\"description\":\"Available export formats for the design\",\"example\":[\"figma\",\"sketch\",\"html\",\"react\"],\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"preview\":{\"description\":\"URL to preview image of the generated design\",\"example\":\"https://stitch.withgoogle.com/previews/design_abc123xyz.png\",\"format\":\"uri\",\"type\":\"string\"},\"success\":{\"example\":true,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Successfully generated UI design\"},\"400\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Invalid prompt or missing required parameters\",\"type\":\"string\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid parameters\"},\"401\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Invalid API key\",\"type\":\"string\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Unauthorized - Invalid or missing API key\"},\"429\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Rate limit exceeded\",\"type\":\"string\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Too many requests - Rate limit exceeded\"},\"500\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"error\":{\"example\":\"Internal server error occurred\",\"type\":\"string\"},\"success\":{\"example\":false,\"type\":\"boolean\"}},\"type\":\"object\"}}},\"description\":\"Internal server error\"}},\"security\":[{\"ApiKeyAuth\":[]}],\"securitySchemes\":{\"ApiKeyAuth\":{\"description\":\"API key for authentication\",\"in\":\"header\",\"name\":\"X-API-Key\",\"type\":\"apiKey\"}},\"securitySource\":\"operation\"}",
                     "source": "openapi3",
-                    "version": 1
+                    "version": 2
                   },
-                  "kind": "http",
-                  "method": "POST",
-                  "orig": "/generate",
-                  "segments": [
+                  "g": {},
+                  "k": "http",
+                  "m": "POST",
+                  "o": "/generate",
+                  "q": {},
+                  "r": {},
+                  "s": [
                     {
                       "lit": "generate"
                     }
                   ],
-                  "select": {},
-                  "transform": {
+                  "t": {
                     "req": "`reqdata`",
                     "res": "`body`"
                   }
@@ -554,15 +630,15 @@
           "param": {},
           "step": [
             {
-              "active": true,
-              "data": {},
-              "input": {
+              "a": true,
+              "d": {},
+              "i": {
                 "ref": "design_generation_ref01"
               },
-              "match": {},
-              "op": "create",
-              "spec": [],
-              "valid": []
+              "m": {},
+              "o": "create",
+              "s": [],
+              "v": []
             }
           ]
         }

@@ -16,12 +16,6 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS: Record<string, any[]> = {
   
 }
@@ -32,7 +26,6 @@ class Config {
   makeFeature(this: any, fn: string) {
     const fc = FEATURE_CLASS[fn]
     const fi = new fc()
-    // TODO: errors etc
     return fi
   }
 
@@ -144,52 +137,62 @@ class Config {
       "fields": [
         {
           "name": "colorScheme",
-          "short": "Preferred color scheme for the design",
-          "type": "`$STRING`"
+          "title": "Color Scheme",
+          "type": "`$STRING`",
+          "short": "Preferred color scheme for the design"
         },
         {
           "name": "components",
-          "short": "Specific UI components to include",
-          "type": "`$ARRAY`"
+          "title": "Components",
+          "type": "`$ARRAY`",
+          "short": "Specific UI components to include"
         },
         {
           "name": "design",
+          "title": "Design",
           "type": "`$OBJECT`"
         },
         {
           "name": "designId",
-          "short": "Unique identifier for the generated design",
-          "type": "`$STRING`"
+          "title": "Design Id",
+          "type": "`$STRING`",
+          "short": "Unique identifier for the generated design"
         },
         {
           "name": "exportFormats",
-          "short": "Available export formats for the design",
-          "type": "`$ARRAY`"
+          "title": "Export Formats",
+          "type": "`$ARRAY`",
+          "short": "Available export formats for the design"
         },
         {
           "name": "platform",
-          "short": "Target platform for the UI design",
-          "type": "`$STRING`"
+          "title": "Platform",
+          "type": "`$STRING`",
+          "short": "Target platform for the UI design"
         },
         {
-          "format": "uri",
           "name": "preview",
+          "title": "Preview",
+          "type": "`$STRING`",
           "short": "URL to preview image of the generated design",
-          "type": "`$STRING`"
+          "format": "uri"
         },
         {
           "name": "prompt",
+          "title": "Prompt",
+          "type": "`$STRING`",
           "req": true,
-          "short": "Description of the desired UI design",
-          "type": "`$STRING`"
+          "short": "Description of the desired UI design"
         },
         {
           "name": "style",
-          "short": "Design style preferences",
-          "type": "`$STRING`"
+          "title": "Style",
+          "type": "`$STRING`",
+          "short": "Design style preferences"
         },
         {
           "name": "success",
+          "title": "Success",
           "type": "`$BOOLEAN`"
         }
       ],
@@ -200,7 +203,6 @@ class Config {
           "name": "create",
           "points": [
             {
-              "args": {},
               "kind": "http",
               "method": "POST",
               "orig": "/generate",
@@ -209,14 +211,16 @@ class Config {
                   "lit": "generate"
                 }
               ],
-              "select": {},
+              "parts": [
+                "generate"
+              ],
+              "rename": {},
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "parts": [
-                "generate"
-              ]
+              "args": {},
+              "select": {}
             }
           ]
         }

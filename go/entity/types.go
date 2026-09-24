@@ -1,7 +1,7 @@
 // Typed models for the StitchAiDesign SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,16 +14,6 @@ import (
 
 // DesignGeneration is the typed data model for the design_generation entity.
 type DesignGeneration struct {
-	ColorScheme *string `json:"colorScheme,omitempty"`
-	Components *[]any `json:"components,omitempty"`
-	Design *map[string]any `json:"design,omitempty"`
-	DesignId *string `json:"designId,omitempty"`
-	ExportFormats *[]any `json:"exportFormats,omitempty"`
-	Platform *string `json:"platform,omitempty"`
-	Preview *string `json:"preview,omitempty"`
-	Prompt string `json:"prompt"`
-	Style *string `json:"style,omitempty"`
-	Success *bool `json:"success,omitempty"`
 }
 
 // DesignGenerationCreateData is the typed request payload for DesignGeneration.CreateTyped.

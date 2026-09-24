@@ -1,0 +1,108 @@
+# Entity: design_generation
+
+main: kit: entity: design_generation: {
+
+  alias: field: {}
+
+  fields: {
+    colorScheme: {
+      h: "Color Scheme"
+      n: "colorScheme"
+      r: false
+      sh: "Preferred color scheme for the design"
+      t: "`$STRING`"
+    }
+    components: {
+      h: "Components"
+      n: "components"
+      r: false
+      sh: "Specific UI components to include"
+      t: "`$ARRAY`"
+    }
+    design: {
+      h: "Design"
+      n: "design"
+      r: false
+      t: "`$OBJECT`"
+    }
+    designId: {
+      h: "Design Id"
+      n: "designId"
+      r: false
+      sh: "Unique identifier for the generated design"
+      t: "`$STRING`"
+    }
+    exportFormats: {
+      h: "Export Formats"
+      n: "exportFormats"
+      r: false
+      sh: "Available export formats for the design"
+      t: "`$ARRAY`"
+    }
+    platform: {
+      h: "Platform"
+      n: "platform"
+      r: false
+      sh: "Target platform for the UI design"
+      t: "`$STRING`"
+    }
+    preview: {
+      fo: "uri"
+      h: "Preview"
+      n: "preview"
+      r: false
+      sh: "URL to preview image of the generated design"
+      t: "`$STRING`"
+    }
+    prompt: {
+      h: "Prompt"
+      n: "prompt"
+      r: true
+      sh: "Description of the desired UI design"
+      t: "`$STRING`"
+    }
+    style: {
+      h: "Style"
+      n: "style"
+      r: false
+      sh: "Design style preferences"
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "design_generation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /generate"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/generate"
+          s: [
+            {
+              lit: "generate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

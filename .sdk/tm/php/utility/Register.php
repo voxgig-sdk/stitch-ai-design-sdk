@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 StitchAiDesignUtility::setRegistrar(function (StitchAiDesignUtility $u): void {
     $u->clean = [StitchAiDesignClean::class, 'call'];
+    $u->clean_add = [StitchAiDesignClean::class, 'add'];
+    $u->clean_explain = [StitchAiDesignDone::class, 'clean_explain'];
     $u->done = [StitchAiDesignDone::class, 'call'];
     $u->make_error = [StitchAiDesignMakeError::class, 'call'];
     $u->feature_add = [StitchAiDesignFeatureAdd::class, 'call'];

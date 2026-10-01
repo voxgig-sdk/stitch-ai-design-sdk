@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 StitchAiDesignUtility.registrar = ->(u) {
   u.clean = StitchAiDesignUtilities::Clean
+  u.clean_add = StitchAiDesignUtilities::CleanAdd
+  u.clean_explain = StitchAiDesignUtilities::CleanExplain
   u.done = StitchAiDesignUtilities::Done
   u.make_error = StitchAiDesignUtilities::MakeError
   u.feature_add = StitchAiDesignUtilities::FeatureAdd

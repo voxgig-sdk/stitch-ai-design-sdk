@@ -3,5 +3,18 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "API key for authentication",
+      "Array of UI components in the design",
+      "Available export formats for the design",
+      "Preferred color scheme for the design",
+      "Production server",
+      "Stitch is an API that generates user interfaces for mobile and web applications, streamlining the design process. It leverages artificial intelligence to assist designers in quickly ideating and creating layouts, making design both fast and efficient.",
+      "Successfully generated UI design",
+      "Target platform for the UI design",
+      "Unique identifier for the generated design"
+    ]
+  }
 }

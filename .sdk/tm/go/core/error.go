@@ -12,6 +12,8 @@ type StitchAiDesignError struct {
 	Ctx    *Context `json:"-"`
 	Result any
 	Spec   any
+	// The HTTP status, -1 when there was no response.
+	Status int
 }
 
 func NewStitchAiDesignError(code string, msg string, ctx *Context) *StitchAiDesignError {
@@ -21,7 +23,12 @@ func NewStitchAiDesignError(code string, msg string, ctx *Context) *StitchAiDesi
 		Code:               code,
 		Msg:                msg,
 		Ctx:                ctx,
+		Status:             -1,
 	}
+}
+
+func (e *StitchAiDesignError) NotFound() bool {
+	return 404 == e.Status
 }
 
 func (e *StitchAiDesignError) Error() string {
@@ -35,6 +42,7 @@ func (e *StitchAiDesignError) Record() map[string]any {
 		"sdk":     e.Sdk,
 		"code":    e.Code,
 		"message": e.Msg,
+		"status":  e.Status,
 		"result":  e.Result,
 		"spec":    e.Spec,
 	}

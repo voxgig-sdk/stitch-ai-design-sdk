@@ -82,6 +82,13 @@ main: kit: entity: design_generation: {
       name: "create"
       points: [
         {
+          bf: [
+            "colorScheme"
+            "components"
+            "platform"
+            "prompt"
+            "style"
+          ]
           co: {
             id: "POST /generate"
             source: "openapi3"
@@ -89,6 +96,10 @@ main: kit: entity: design_generation: {
           }
           m: "POST"
           o: "/generate"
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "generate"

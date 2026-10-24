@@ -32,13 +32,8 @@ class DesignGenerationCreateData
 {
     public ?string $colorScheme = null;
     public ?array $components = null;
-    public ?array $design = null;
-    public ?string $designId = null;
-    public ?array $exportFormats = null;
     public ?string $platform = null;
-    public ?string $preview = null;
     public string $prompt;
     public ?string $style = null;
-    public ?bool $success = null;
 }
 

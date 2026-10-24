@@ -61,19 +61,7 @@ DesignGeneration = Struct.new(
 # @!attribute [rw] components
 #   @return [Array, nil]
 #
-# @!attribute [rw] design
-#   @return [Hash, nil]
-#
-# @!attribute [rw] designId
-#   @return [String, nil]
-#
-# @!attribute [rw] exportFormats
-#   @return [Array, nil]
-#
 # @!attribute [rw] platform
-#   @return [String, nil]
-#
-# @!attribute [rw] preview
 #   @return [String, nil]
 #
 # @!attribute [rw] prompt
@@ -81,20 +69,12 @@ DesignGeneration = Struct.new(
 #
 # @!attribute [rw] style
 #   @return [String, nil]
-#
-# @!attribute [rw] success
-#   @return [Boolean, nil]
 DesignGenerationCreateData = Struct.new(
   :colorScheme,
   :components,
-  :design,
-  :designId,
-  :exportFormats,
   :platform,
-  :preview,
   :prompt,
   :style,
-  :success,
   keyword_init: true
 )
 

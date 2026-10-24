@@ -20,14 +20,9 @@ type DesignGeneration struct {
 type DesignGenerationCreateData struct {
 	ColorScheme *string `json:"colorScheme,omitempty"`
 	Components *[]any `json:"components,omitempty"`
-	Design *map[string]any `json:"design,omitempty"`
-	DesignId *string `json:"designId,omitempty"`
-	ExportFormats *[]any `json:"exportFormats,omitempty"`
 	Platform *string `json:"platform,omitempty"`
-	Preview *string `json:"preview,omitempty"`
 	Prompt string `json:"prompt"`
 	Style *string `json:"style,omitempty"`
-	Success *bool `json:"success,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

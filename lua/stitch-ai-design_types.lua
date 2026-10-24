@@ -21,14 +21,9 @@
 ---@class DesignGenerationCreateData
 ---@field colorScheme? string
 ---@field components? table
----@field design? table
----@field designId? string
----@field exportFormats? table
 ---@field platform? string
----@field preview? string
 ---@field prompt string
 ---@field style? string
----@field success? boolean
 
 local M = {}
 

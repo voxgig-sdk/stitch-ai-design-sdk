@@ -39,10 +39,5 @@ class DesignGenerationCreateDataRequired(TypedDict):
 class DesignGenerationCreateData(DesignGenerationCreateDataRequired, total=False):
     colorScheme: str
     components: list
-    design: dict
-    designId: str
-    exportFormats: list
     platform: str
-    preview: str
     style: str
-    success: bool
